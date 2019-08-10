@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class MarketDataFileDao implements MarketDataFileDaoInterface{
+public class MarketDataFileDao implements MarketDataFileDaoInterface {
 
     @Autowired
     MarketDataMapper marketDataMapper;
@@ -20,11 +20,13 @@ public class MarketDataFileDao implements MarketDataFileDaoInterface{
     @Override
     public List<MarketData> getAllMarketData(String date, String stockName) {
         List<MarketData> marketDataList = new ArrayList<>();
-        List<String> marketDataStringList = FileUtil.readFile(Constant.getgetStockFileAbsPath(date,stockName));
-        for(String str : marketDataStringList){
+        List<String> marketDataStringList = FileUtil.readFile(Constant.getgetStockFileAbsPath(date, stockName));
+        for (String str : marketDataStringList) {
             MarketData marketData = marketDataMapper.convert(str);
-            marketData.setStockName(stockName);
-            marketDataList.add(marketData);
+            if (marketData != null) {
+                marketData.setStockName(stockName);
+                marketDataList.add(marketData);
+            }
         }
         return marketDataList;
     }

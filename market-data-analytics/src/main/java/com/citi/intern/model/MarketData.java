@@ -2,13 +2,14 @@ package com.citi.intern.model;
 
 import com.alibaba.fastjson.JSON;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MarketData {
 
     private String stockName;
 
-    private Date date;
+    private String date;
 
     private Date time;
 
@@ -38,16 +39,17 @@ public class MarketData {
         this.stockName = stockName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Date getTime() {
-        return time;
+    public String getTime() {
+        SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
+        return ft.format(time);
     }
 
     public void setTime(Date time) {
