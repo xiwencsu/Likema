@@ -1,5 +1,6 @@
-package com.citi.intern.mapper;
+package com.citi.intern.mapper.impl;
 
+import com.citi.intern.mapper.MarketDataMapper;
 import com.citi.intern.model.MarketData;
 import org.springframework.stereotype.Component;
 
@@ -8,9 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
 @Component
-public class MarketDataMapperImp implements MarketDataMapper{
+public class MarketDataMapperImp implements MarketDataMapper {
     @Override
     public MarketData convert(String marketDataStr) {
+        if(marketDataStr==null||marketDataStr.length()==0){
+            return null;
+        }
         try{
             String[] strArray = new String[15];
             String[] marketDataStrArr = marketDataStr.split(",");

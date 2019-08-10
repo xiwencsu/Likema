@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface MarketDataFileDaoInterface {
     List<MarketData> getAllMarketData(String date, String stockName);
-    DailySettlementData getDailySettlementData(String date, String stockName);
 }

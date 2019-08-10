@@ -21,4 +21,9 @@ public class MarketDataController {
     public List<MarketData> list(@RequestParam String date, @RequestParam String stockName) {
         return marketDataService.queryMarketDataByDateAndStock(date, stockName);
     }
+
+    @GetMapping("/count")
+    public Integer count(@RequestParam String date, @RequestParam String stockName) {
+        return marketDataService.queryMarketDataByDateAndStock(date, stockName).size();
+    }
 }

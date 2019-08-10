@@ -9,7 +9,13 @@ public final class Constant {
         return "table_"+stockName+".csv";
     }
 
-    public static String getgetStockFileAbsPath(String date, String stockName){
+    public static String getStockFileAbsPath(String date, String stockName){
         return MARKET_DATA_ROOT_DIR+"\\"+DATE_DIR_PREFIX+date+"\\"+getStockFileName(stockName);
+    }
+
+    public static final String DAILY_SETTLEMENT_DATA_ROOT_DIR = "C:\\Users\\HP\\tmp\\Likema\\Day Data By Company";
+
+    public static String getDailySettlementDataFileAbsPath(String stockName){
+        return DAILY_SETTLEMENT_DATA_ROOT_DIR+"\\"+stockName+".csv";
     }
 }
