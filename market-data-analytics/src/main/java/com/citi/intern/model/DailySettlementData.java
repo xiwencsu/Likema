@@ -1,5 +1,7 @@
 package com.citi.intern.model;
 
+import com.alibaba.fastjson.JSON;
+
 public class DailySettlementData {
 
     private String stockName;
@@ -70,5 +72,10 @@ public class DailySettlementData {
 
     public void setTradeVolume(Double tradeVolume) {
         this.tradeVolume = tradeVolume;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 }

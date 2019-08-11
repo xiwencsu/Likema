@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ECharts</title>
+    <script th:src="@{/js/jquery-2.1.1.min.js}"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+    $.ajax({
+        url: "/product/list",
+        type: 'GET',
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            alert(res);
+        }
+    })
+</script>
+
+</body>
+</html>
