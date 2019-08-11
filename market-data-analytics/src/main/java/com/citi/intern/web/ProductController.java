@@ -19,7 +19,7 @@ public class ProductController {
         List<Product> list = new ArrayList();
         list.add(new Product("衬衣", 10));
         list.add(new Product("短袖", 20));
-        list.add(new Product("大衣", 30));
+        list.add(new Product("大衣", 100));
         return list;
     }
 
