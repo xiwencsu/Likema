@@ -48,7 +48,7 @@ public class MarketData {
     }
 
     public String getTime() {
-        SimpleDateFormat ft = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat ft = new SimpleDateFormat("HH:mm");
         return ft.format(time);
     }
 

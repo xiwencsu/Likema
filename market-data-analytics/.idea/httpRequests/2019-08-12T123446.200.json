@@ -1,0 +1,515 @@
+[
+  {
+    "stockName": "a",
+    "date": "20160104",
+    "openPrice": 41.08,
+    "highPrice": 41.19,
+    "lowPrice": 40.34,
+    "closePrice": 40.68,
+    "tradeVolume": 2896132.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160105",
+    "openPrice": 40.73,
+    "highPrice": 40.95,
+    "lowPrice": 40.34,
+    "closePrice": 40.55,
+    "tradeVolume": 2338858.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160106",
+    "openPrice": 40.24,
+    "highPrice": 40.99,
+    "lowPrice": 40.05,
+    "closePrice": 40.72,
+    "tradeVolume": 1936853.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160107",
+    "openPrice": 40.04,
+    "highPrice": 40.15,
+    "lowPrice": 38.81,
+    "closePrice": 39.005,
+    "tradeVolume": 3183135.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160108",
+    "openPrice": 39.22,
+    "highPrice": 39.705,
+    "lowPrice": 38.46,
+    "closePrice": 38.59,
+    "tradeVolume": 2972902.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160111",
+    "openPrice": 38.71,
+    "highPrice": 38.9,
+    "lowPrice": 37.41,
+    "closePrice": 37.93,
+    "tradeVolume": 2661182.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160112",
+    "openPrice": 38.43,
+    "highPrice": 38.58,
+    "lowPrice": 37.646,
+    "closePrice": 38.2,
+    "tradeVolume": 1777038.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160113",
+    "openPrice": 38.35,
+    "highPrice": 38.46,
+    "lowPrice": 36.715,
+    "closePrice": 36.87,
+    "tradeVolume": 3856074.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160114",
+    "openPrice": 36.94,
+    "highPrice": 37.88,
+    "lowPrice": 36.55,
+    "closePrice": 37.6,
+    "tradeVolume": 2677655.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160115",
+    "openPrice": 36.67,
+    "highPrice": 37.56,
+    "lowPrice": 36.55,
+    "closePrice": 37.12,
+    "tradeVolume": 2772984.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160119",
+    "openPrice": 37.64,
+    "highPrice": 37.93,
+    "lowPrice": 36.79,
+    "closePrice": 37.21,
+    "tradeVolume": 2200169.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160120",
+    "openPrice": 36.68,
+    "highPrice": 37.61,
+    "lowPrice": 36.12,
+    "closePrice": 37.26,
+    "tradeVolume": 2331499.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160121",
+    "openPrice": 37.35,
+    "highPrice": 37.83,
+    "lowPrice": 36.81,
+    "closePrice": 37.22,
+    "tradeVolume": 1945759.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160122",
+    "openPrice": 37.91,
+    "highPrice": 38.18,
+    "lowPrice": 37.56,
+    "closePrice": 37.97,
+    "tradeVolume": 1647683.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160125",
+    "openPrice": 37.4,
+    "highPrice": 38.03,
+    "lowPrice": 37.4,
+    "closePrice": 37.61,
+    "tradeVolume": 1658589.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160126",
+    "openPrice": 37.89,
+    "highPrice": 37.96,
+    "lowPrice": 37.36,
+    "closePrice": 37.52,
+    "tradeVolume": 1581281.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160127",
+    "openPrice": 37.39,
+    "highPrice": 37.92,
+    "lowPrice": 36.81,
+    "closePrice": 37.06,
+    "tradeVolume": 1365581.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160128",
+    "openPrice": 37.27,
+    "highPrice": 37.27,
+    "lowPrice": 36.01,
+    "closePrice": 36.11,
+    "tradeVolume": 3239345.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160129",
+    "openPrice": 36.44,
+    "highPrice": 37.69,
+    "lowPrice": 36.24,
+    "closePrice": 37.65,
+    "tradeVolume": 2410632.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160201",
+    "openPrice": 37.37,
+    "highPrice": 37.945,
+    "lowPrice": 37.0,
+    "closePrice": 37.68,
+    "tradeVolume": 2376998.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160202",
+    "openPrice": 37.18,
+    "highPrice": 37.55,
+    "lowPrice": 36.95,
+    "closePrice": 37.08,
+    "tradeVolume": 1610444.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160203",
+    "openPrice": 37.27,
+    "highPrice": 37.37,
+    "lowPrice": 36.29,
+    "closePrice": 37.21,
+    "tradeVolume": 2009929.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160204",
+    "openPrice": 37.15,
+    "highPrice": 37.79,
+    "lowPrice": 36.97,
+    "closePrice": 37.425,
+    "tradeVolume": 2699772.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160205",
+    "openPrice": 37.26,
+    "highPrice": 37.31,
+    "lowPrice": 35.83,
+    "closePrice": 36.035,
+    "tradeVolume": 4175159.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160208",
+    "openPrice": 35.61,
+    "highPrice": 35.78,
+    "lowPrice": 34.39,
+    "closePrice": 34.8,
+    "tradeVolume": 3608805.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160209",
+    "openPrice": 34.17,
+    "highPrice": 35.77,
+    "lowPrice": 34.15,
+    "closePrice": 35.37,
+    "tradeVolume": 3063057.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160210",
+    "openPrice": 35.63,
+    "highPrice": 36.73,
+    "lowPrice": 35.53,
+    "closePrice": 35.86,
+    "tradeVolume": 2952123.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160211",
+    "openPrice": 35.12,
+    "highPrice": 35.61,
+    "lowPrice": 34.935,
+    "closePrice": 35.33,
+    "tradeVolume": 2779195.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160212",
+    "openPrice": 35.84,
+    "highPrice": 36.23,
+    "lowPrice": 35.52,
+    "closePrice": 36.22,
+    "tradeVolume": 3593071.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160216",
+    "openPrice": 36.72,
+    "highPrice": 37.17,
+    "lowPrice": 36.4,
+    "closePrice": 37.08,
+    "tradeVolume": 2450500.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160217",
+    "openPrice": 35.22,
+    "highPrice": 38.13,
+    "lowPrice": 34.75,
+    "closePrice": 37.87,
+    "tradeVolume": 5051125.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160218",
+    "openPrice": 37.73,
+    "highPrice": 37.96,
+    "lowPrice": 37.09,
+    "closePrice": 37.19,
+    "tradeVolume": 1875191.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160219",
+    "openPrice": 36.98,
+    "highPrice": 37.6,
+    "lowPrice": 36.85,
+    "closePrice": 37.44,
+    "tradeVolume": 2036652.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160222",
+    "openPrice": 37.88,
+    "highPrice": 38.19,
+    "lowPrice": 37.78,
+    "closePrice": 38.02,
+    "tradeVolume": 1511997.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160223",
+    "openPrice": 37.64,
+    "highPrice": 37.96,
+    "lowPrice": 36.95,
+    "closePrice": 37.18,
+    "tradeVolume": 1111409.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160224",
+    "openPrice": 36.65,
+    "highPrice": 37.5,
+    "lowPrice": 36.47,
+    "closePrice": 37.47,
+    "tradeVolume": 1339522.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160225",
+    "openPrice": 37.62,
+    "highPrice": 37.71,
+    "lowPrice": 36.95,
+    "closePrice": 37.62,
+    "tradeVolume": 1304129.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160226",
+    "openPrice": 37.75,
+    "highPrice": 37.92,
+    "lowPrice": 37.43,
+    "closePrice": 37.58,
+    "tradeVolume": 778733.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160229",
+    "openPrice": 37.59,
+    "highPrice": 37.7,
+    "lowPrice": 37.33,
+    "closePrice": 37.33,
+    "tradeVolume": 1717563.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160301",
+    "openPrice": 37.63,
+    "highPrice": 38.66,
+    "lowPrice": 37.57,
+    "closePrice": 38.595,
+    "tradeVolume": 2619409.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160302",
+    "openPrice": 38.49,
+    "highPrice": 39.27,
+    "lowPrice": 38.41,
+    "closePrice": 39.04,
+    "tradeVolume": 3454926.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160303",
+    "openPrice": 38.92,
+    "highPrice": 39.24,
+    "lowPrice": 38.74,
+    "closePrice": 39.2,
+    "tradeVolume": 792616.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160304",
+    "openPrice": 39.14,
+    "highPrice": 39.58,
+    "lowPrice": 39.02,
+    "closePrice": 39.34,
+    "tradeVolume": 933350.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160307",
+    "openPrice": 39.04,
+    "highPrice": 39.68,
+    "lowPrice": 38.96,
+    "closePrice": 39.44,
+    "tradeVolume": 1135785.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160308",
+    "openPrice": 38.97,
+    "highPrice": 39.13,
+    "lowPrice": 38.01,
+    "closePrice": 38.1,
+    "tradeVolume": 1624677.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160309",
+    "openPrice": 38.31,
+    "highPrice": 38.4,
+    "lowPrice": 37.95,
+    "closePrice": 38.12,
+    "tradeVolume": 1493528.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160310",
+    "openPrice": 38.17,
+    "highPrice": 38.51,
+    "lowPrice": 37.62,
+    "closePrice": 37.98,
+    "tradeVolume": 1499899.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160311",
+    "openPrice": 38.43,
+    "highPrice": 39.275,
+    "lowPrice": 38.32,
+    "closePrice": 39.21,
+    "tradeVolume": 1314735.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160314",
+    "openPrice": 38.98,
+    "highPrice": 39.17,
+    "lowPrice": 38.7,
+    "closePrice": 39.02,
+    "tradeVolume": 806496.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160315",
+    "openPrice": 38.58,
+    "highPrice": 38.72,
+    "lowPrice": 38.08,
+    "closePrice": 38.3,
+    "tradeVolume": 921840.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160316",
+    "openPrice": 38.09,
+    "highPrice": 39.105,
+    "lowPrice": 38.02,
+    "closePrice": 38.99,
+    "tradeVolume": 1850065.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160317",
+    "openPrice": 39.06,
+    "highPrice": 39.44,
+    "lowPrice": 38.59,
+    "closePrice": 39.31,
+    "tradeVolume": 1687703.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160318",
+    "openPrice": 39.33,
+    "highPrice": 40.48,
+    "lowPrice": 39.27,
+    "closePrice": 40.18,
+    "tradeVolume": 2054372.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160321",
+    "openPrice": 40.07,
+    "highPrice": 40.14,
+    "lowPrice": 39.64,
+    "closePrice": 39.64,
+    "tradeVolume": 1912214.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160322",
+    "openPrice": 39.56,
+    "highPrice": 40.04,
+    "lowPrice": 39.445,
+    "closePrice": 39.89,
+    "tradeVolume": 1305093.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160323",
+    "openPrice": 39.9,
+    "highPrice": 39.99,
+    "lowPrice": 39.37,
+    "closePrice": 39.47,
+    "tradeVolume": 1422341.0
+  },
+  {
+    "stockName": "a",
+    "date": "20160324",
+    "openPrice": 39.16,
+    "highPrice": 39.46,
+    "lowPrice": 38.89,
+    "closePrice": 39.45,
+    "tradeVolume": 786809.0
+  }
+]

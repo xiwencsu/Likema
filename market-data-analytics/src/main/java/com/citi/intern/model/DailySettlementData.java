@@ -5,17 +5,11 @@ import com.alibaba.fastjson.JSON;
 public class DailySettlementData {
 
     private String stockName;
-
     private String date;
-
     private Double openPrice;
-
     private Double highPrice;
-
     private Double lowPrice;
-
     private Double closePrice;
-
     private Double tradeVolume;
 
     public String getStockName() {
