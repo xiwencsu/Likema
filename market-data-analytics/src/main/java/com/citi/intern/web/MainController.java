@@ -21,6 +21,10 @@ public class MainController {
     public String index() {
         return "chart";
     }
+    
+    @RequestMapping(value = "/TimelySharingChart", method = RequestMethod.GET)
+    public ModelAndView TimelySharing() {
+        return new ModelAndView("TimeSharing");
 
     @RequestMapping(value = "/charts", method = RequestMethod.GET)
     public String charts() {
