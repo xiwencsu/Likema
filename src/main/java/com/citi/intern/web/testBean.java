@@ -12,6 +12,7 @@ import java.util.Map;
 public class testBean {
     @RequestMapping("/test")
     public String testDemo(){
+        System.out.println("hello");
         return "index";
     }
 
