@@ -1,12 +1,9 @@
 package com.citi.intern.service;
 
-import com.citi.intern.model.StockData;
-import com.citi.intern.util.PageWrapper;
-
-import java.util.List;
+import com.citi.intern.util.DataTableWrapper;
 
 public interface StockDataService {
-    List<PageWrapper> getStockDataByPage(String date, Integer pageNo, Integer pageSize);
-    List<PageWrapper> getStockDateByNameByPage(String date, String name, Integer pageNo, Integer pageSize);
-    List<PageWrapper> getStockDateSortByVolumeByPage(String date, Integer pageNo, Integer pageSize);
+    DataTableWrapper getStockData(String date);
+    DataTableWrapper getStockDateByName(String date, String name);
+    DataTableWrapper getStockDateSortByVolume(String date);
 }

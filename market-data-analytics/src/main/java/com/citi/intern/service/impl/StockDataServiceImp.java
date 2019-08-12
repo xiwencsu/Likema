@@ -3,7 +3,7 @@ package com.citi.intern.service.impl;
 import com.citi.intern.dao.StockDataFileDaoInterface;
 import com.citi.intern.model.StockData;
 import com.citi.intern.service.StockDataService;
-import com.citi.intern.util.PageWrapper;
+import com.citi.intern.util.DataTableWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,13 +17,13 @@ public class StockDataServiceImp implements StockDataService {
     StockDataFileDaoInterface stockDataFileDaoInterface;
 
     @Override
-    public List<PageWrapper> getStockDataByPage(String date, Integer pageNo, Integer pageSize) {
+    public DataTableWrapper getStockData(String date) {
         List<StockData> stockDataList =stockDataFileDaoInterface.getStockData(date);
-        return pageHelp(stockDataList, pageNo, pageSize);
+        return dataTableWrapperHelp(stockDataList);
     }
 
     @Override
-    public List<PageWrapper> getStockDateByNameByPage(String date, String name, Integer pageNo, Integer pageSize) {
+    public DataTableWrapper getStockDateByName(String date, String name) {
         List<StockData> stockDataList = stockDataFileDaoInterface.getStockData(date);
         System.out.print(name);
         List<StockData> stockDataListResult = new ArrayList<>();
@@ -32,11 +32,11 @@ public class StockDataServiceImp implements StockDataService {
                 stockDataListResult.add(stockData);
             };
         }
-        return pageHelp(stockDataListResult, pageNo, pageSize);
+        return dataTableWrapperHelp(stockDataListResult);
     }
 
     @Override
-    public List<PageWrapper> getStockDateSortByVolumeByPage(String date, Integer pageNo, Integer pageSize) {
+    public DataTableWrapper getStockDateSortByVolume(String date) {
         List<StockData> stockDataList =stockDataFileDaoInterface.getStockData(date);
         for(int i=0; i<stockDataList.size(); i++){
             for(int j=i+1; j<stockDataList.size(); j++){
@@ -47,32 +47,13 @@ public class StockDataServiceImp implements StockDataService {
                 }
             }
         }
-        return pageHelp(stockDataList, pageNo, pageSize);
+        return dataTableWrapperHelp(stockDataList);
     }
 
-    private static List<PageWrapper> pageHelp(List<StockData> stockDataList, Integer pageNo, Integer pageSize){
-        List<PageWrapper> stockDataPageList = new ArrayList<>();
-        //List<StockData> stockDataResultList = new ArrayList<>();
-        Integer i = -1;
-        Integer startCount = pageNo * pageSize;
-        Integer endCount = (pageNo + 1)*pageSize;
-        for(StockData stockData : stockDataList){
-            i++;
-            if(i < startCount){
-                continue;
-            }
-            if(i >= endCount){
-                break;
-            }
-            PageWrapper pageWrapper = new PageWrapper();
-            pageWrapper.setCount(stockDataList.size());
-            pageWrapper.setPageNo(pageNo);
-            pageWrapper.setPageSize(pageSize);
-            pageWrapper.setData(stockData);
-            stockDataPageList.add(pageWrapper);
-        }
-
-        return stockDataPageList;
+    private static DataTableWrapper dataTableWrapperHelp(List<StockData> stockDataList){
+        DataTableWrapper dataTableWrapper = new DataTableWrapper();
+        dataTableWrapper.setData(stockDataList);
+        return dataTableWrapper;
     }
 
 

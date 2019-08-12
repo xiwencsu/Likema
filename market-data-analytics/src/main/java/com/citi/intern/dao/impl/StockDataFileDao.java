@@ -18,7 +18,7 @@ public class StockDataFileDao implements StockDataFileDaoInterface {
     @Override
     public List<StockData> getStockData(String date) {
         List<StockData> stockDataList = new ArrayList<>();
-        List<String> stockDataStringList = FileUtil.readFile("D:\\入职training\\Data Analytics\\Test Data\\Day Data\\" + date + ".csv");
+        List<String> stockDataStringList = FileUtil.readFile("F:\\citi_project\\Likema\\Likema\\Day Data\\" + date + ".csv");
         Boolean tableName = Boolean.FALSE;
         for(String str : stockDataStringList){
             if(tableName == Boolean.FALSE){
