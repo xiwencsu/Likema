@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index(ModelMap modelMap) {
+    public String index() {
         return "index";
     }
 
