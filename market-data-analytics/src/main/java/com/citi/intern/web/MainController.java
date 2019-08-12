@@ -12,9 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/main")
 public class MainController {
 
-    @RequestMapping(value = "/DailyCandlestickChart", method = RequestMethod.GET)
-    public ModelAndView index() {
-        return new ModelAndView("index");
+
+    @RequestMapping(value = "/chart", method = RequestMethod.GET)
+    public ModelAndView chart() {
+        return new ModelAndView("chart");
     }
 
     @RequestMapping(value = "/TimelySharingChart", method = RequestMethod.GET)
@@ -26,8 +27,4 @@ public class MainController {
     public ModelAndView OHLC() {
         return new ModelAndView("OHLC");
     }
-//    @RequestMapping(value = "/home", method = RequestMethod.GET)
-//    public String home() {
-//        return "home";
-//    }
 }
