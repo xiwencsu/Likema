@@ -3,6 +3,7 @@ package com.citi.intern.web;
 import com.citi.intern.mapper.DstEchartMapper;
 import com.citi.intern.model.DailySettlementData;
 import com.citi.intern.model.Echart;
+import com.citi.intern.model.Portfolios;
 import com.citi.intern.service.DailySettlementDataService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,5 +35,9 @@ public class DailySettlementDataController {
     @GetMapping("/getDstEchart")
     public Echart getDstEchart(@RequestParam String stockName) {
         return dstEchartMapper.convert(dailySettlementDataService.queryDailySettlementDataByStock(stockName));
+    }
+    @GetMapping("/getDstEcharts")
+    public List<Object> getDstEchart(@RequestParam String[] stockNames) {
+        return dailySettlementDataService.queryDailySettlementDataByStocks(stockNames);
     }
 }

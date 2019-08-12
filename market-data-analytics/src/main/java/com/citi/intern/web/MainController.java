@@ -22,6 +22,11 @@ public class MainController {
         return "chart";
     }
 
+    @RequestMapping(value = "/charts", method = RequestMethod.GET)
+    public String charts() {
+        return "charts";
+    }
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     @ResponseBody
     public String home() {
