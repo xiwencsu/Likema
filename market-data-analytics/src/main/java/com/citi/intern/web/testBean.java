@@ -15,6 +15,11 @@ public class testBean {
         return "index";
     }
 
+    @RequestMapping("/testP")
+    public String testP(){
+        return "portfolio";
+    }
+
     @RequestMapping(value="/testData",method= RequestMethod.POST)
     public Map<String,Object> testData(){
         Map<String, Object> result = new HashMap<>();

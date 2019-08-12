@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/main")
 public class MainController {
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/chart", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "chart";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
