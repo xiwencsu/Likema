@@ -5,26 +5,31 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by Intellij IDEA.
- *
- * @Author LUOLIANG
- * @Date 2016/8/2
- * @Comment
- */
+
 @Controller
 @RequestMapping("/main")
 public class MainController {
 
+
     @RequestMapping(value = "/chart", method = RequestMethod.GET)
-    public String index() {
-        return "chart";
+    public ModelAndView chart() {
+        return new ModelAndView("chart");
     }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    @ResponseBody
-    public String home() {
-        return "home";
+    @RequestMapping(value = "/TimelySharingChart", method = RequestMethod.GET)
+    public ModelAndView TimelySharing() {
+        return new ModelAndView("TimeSharing");
+    }
+    
+    @RequestMapping(value = "/charts", method = RequestMethod.GET)
+    public String charts() {
+        return "charts";
+
+    }
+    @RequestMapping(value = "/OHLCChart", method = RequestMethod.GET)
+    public ModelAndView OHLC() {
+        return new ModelAndView("OHLC");
     }
 }
