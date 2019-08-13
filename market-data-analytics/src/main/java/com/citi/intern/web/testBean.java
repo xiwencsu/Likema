@@ -19,6 +19,10 @@ public class testBean {
     public String testP(){
         return "portfolio";
     }
+    @RequestMapping("/testchart")
+    public String testChart(){
+        return "chart1";
+    }
 
     @RequestMapping(value="/testData",method= RequestMethod.POST)
     public Map<String,Object> testData(){
