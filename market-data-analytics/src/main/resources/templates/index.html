@@ -10,12 +10,11 @@
     <meta charset="utf-8"/>
     <title>Likema</title>
     <meta name="description" content=""/>
-    <meta name="author" content="Walking Pixels | www.walkingpixels.com"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- CSS styles -->
     <link rel='stylesheet' type='text/css' href='/css/wuxia-red.css'/>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+    <!--<link rel="stylesheet" type='text/css' href="/js/plugins/dateSelect/build/css/bootstrap-datetimepicker.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="/img/icons/favicon.ico"/>
@@ -31,6 +30,10 @@
     <script src="/js/libs/selectivizr.js"></script>
     <script src="/js/echarts.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+    <!-- jQuery DataTable -->
+    <script src="/js/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+    <!-- jQuery DateSelect-->
+    <!--<script type="text/javascript" src="/js/plugins/dateSelect/build/js/bootstrap-datetimepicker.min.js"></script>-->
 
     <script>
 
@@ -131,17 +134,26 @@
                     <!-- /Page grid cell (12 blocks - full) -->
 
                     <!-- Page grid cell (8 blocks) -->
-                    <article class="span8">
+
+                    <article class="span12">
+                        <div>
+                            <input id="date" type="date"/>
+                            <!--<button id="dateSelect" class="btn btn-default">-->
+                                <i style="color: #d14;" class="fa fa-calendar fa-2x"></i>
+                            <!--</button>-->
+                        </div>
+
                         <table class="datatable table table-striped table-bordered" id="table">
                             <thead>
                             <tr>
-                                <th>Date</th>
                                 <th>Symbol</th>
+                                <th>Date</th>
                                 <th>Open</th>
                                 <th>High</th>
                                 <th>Low</th>
                                 <th>Close</th>
                                 <th>Volume</th>
+                                <th>Options</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -153,44 +165,43 @@
                     <!-- Page grid cell (8 blocks) -->
 
                     <!-- Page grid cell (4 blocks) -->
-                    <article class="span4">
-                        <h3></h3>
-                        <p><strong><code>Date</code></strong>
-                            <em>– This provides the date as an integer where 20100527 would represent May 27th,
-                                2010.</em>
-                            <abbr title="date"></abbr>
-                        </p>
-                        <p><strong><code>Open</code></strong>
-                            <em>– The open price.</em>
-                            <abbr title="first trade price"></abbr>
-                        </p>
-                        <p><strong><code>High</code></strong>
-                            <em>– The high price. </em>
-                            <abbr title="highest trade price"></abbr>
-                        </p>
-                        <p><strong><code>Low</code></strong>
-                            <em>– The low price.</em>
-                            <abbr title="lowest trade price"></abbr>
-                        </p>
-                        <p><strong><code>Close</code></strong>
-                            <em>– The close price.</em>
-                            <abbr title="last trade price"></abbr>
-                        </p>
-                        <p><strong><code>Volume</code></strong>
-                            <em>– The trading volume during the interval. Note that it is extremely difficult
-                                to get accurate volume information. The volume is adjusted for splits so that
-                                the total value of shares traded remains constant even if a split occurs.
-                            </em>
-                            <abbr title="trade volume"></abbr>
-                        </p>
-                        <!--<p class="demo-btns">-->
-                        <!--<button class="btn btn-info btn-wuxia">Info</button>-->
-                        <!--<button class="btn btn-success btn-wuxia">Success</button>-->
-                        <!--<button class="btn btn-warning btn-wuxia">Warning</button>-->
-                        <!--<button class="btn btn-danger btn-wuxia">Danger</button>-->
-                        <!--<button class="btn btn-inverse btn-wuxia">Inverse</button>-->
+                    <!--<article class="span4">-->
+                        <!--<p><strong><code>Date</code></strong>-->
+                            <!--<em>– This provides the date as an integer where 20100527 would represent May 27th,-->
+                                <!--2010.</em>-->
+                            <!--<abbr title="date"></abbr>-->
                         <!--</p>-->
-                    </article>
+                        <!--<p><strong><code>Open</code></strong>-->
+                            <!--<em>– The open price.</em>-->
+                            <!--<abbr title="first trade price"></abbr>-->
+                        <!--</p>-->
+                        <!--<p><strong><code>High</code></strong>-->
+                            <!--<em>– The high price. </em>-->
+                            <!--<abbr title="highest trade price"></abbr>-->
+                        <!--</p>-->
+                        <!--<p><strong><code>Low</code></strong>-->
+                            <!--<em>– The low price.</em>-->
+                            <!--<abbr title="lowest trade price"></abbr>-->
+                        <!--</p>-->
+                        <!--<p><strong><code>Close</code></strong>-->
+                            <!--<em>– The close price.</em>-->
+                            <!--<abbr title="last trade price"></abbr>-->
+                        <!--</p>-->
+                        <!--<p><strong><code>Volume</code></strong>-->
+                            <!--<em>– The trading volume during the interval. Note that it is extremely difficult-->
+                                <!--to get accurate volume information. The volume is adjusted for splits so that-->
+                                <!--the total value of shares traded remains constant even if a split occurs.-->
+                            <!--</em>-->
+                            <!--<abbr title="trade volume"></abbr>-->
+                        <!--</p>-->
+                        <!--&lt;!&ndash;<p class="demo-btns">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-info btn-wuxia">Info</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-success btn-wuxia">Success</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-warning btn-wuxia">Warning</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-danger btn-wuxia">Danger</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-inverse btn-wuxia">Inverse</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                    <!--</article>-->
                     <!-- Page grid cell (4 blocks) -->
 
                 </div>
@@ -226,9 +237,151 @@
 <script src="/js/bootstrap/bootstrap-dropdown.js"></script>
 <script src="/js/bootstrap/bootstrap-collapse.js"></script>
 
-<!-- jQuery DataTable -->
-<script src="/js/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+
+
+
 <script>
+        $(document).ready(function () {
+
+            /* Table #example */
+            var table = $('.datatable').DataTable({
+                "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
+                "sPaginationType": "bootstrap",
+                "bProcessing" : false,
+                ajax : {
+                    "url":"/stock/list",
+                    "data": { date : function() {
+                            var date = $("#date").val();
+                            console.log("date:" + date);
+                            if (date.length == 0 || date == null) {
+                                return "20160104";
+                            } else {
+                                var d = date.split("-");
+                                var dateData = "";
+                                for (var i = 0; i < d.length; i++) {
+                                    dateData += d[i];
+                                }
+                                console.log("dateData:"+dateData);
+                                return dateData;
+                            }
+                        }}
+                } ,//通过ajax实现分页的url路径。
+                "aoColumns" : [//初始化要显示的列
+                    {
+                        "data" : "stockName",//获取列数据，跟服务器返回字段一致
+                    },
+                    {
+                        "data" : "date",
+                        "mRender" : function(data, type, full) {
+                            return new Date(data)//处理时间显示
+                                .toLocaleDateString();
+                        }
+                    },
+                    {
+                        "data" : "openPrice"},
+                    {
+                        "data" : "highPrice" },
+                    {
+                        "data" : "lowPrice"},
+                    {
+                        "data" : "closePrice"},
+                    {
+                        "data" : "tradeVolume"},
+                    {
+                        "mDataProp" : null,
+                        "mRender" : function(data, type, row){
+                            // console.log("stockName in button mRender:"+data.stockName);
+                            // var id = '"' + row.id + '"';
+                            var stockName = '"' + data.stockName + '"';
+                            var date = '"' + data.date + '"';
+                            return "<button class=\"btn btn-info btn-wuxia\" " +
+                                            "onclick='showDetail("+stockName+","+date+")'>detail</button>"
+                                +"&nbsp;"
+                                + "<button class=\"btn btn-warning btn-wuxia\" " +
+                                            "onclick='addIntoPortfolio("+stockName+")'>"
+                                + "<i class='fa fa-plus'></i></button>"
+                        }
+                    }
+                ],
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page"
+                },
+                "fnFormatNumber": function ( iIn ) {
+                    console.log("fnFormatNumber-------------------------------");
+                    console.log("iIn="+iIn);
+                    if ( iIn < 1000 ) {
+                        return iIn;
+                    } else {
+                        var
+                            s=(iIn+""),
+                            a=s.split(""), out="",
+                            iLen=s.length;
+
+                        for ( var i=0 ; i<iLen ; i++ ) {
+                            if ( i%3 === 0 && i !== 0 ) {
+                                out = ","+out;
+                            }
+                            out = a[iLen-i-1]+out;
+                        }
+                    }
+                    return out;
+                }
+            })
+
+            $("#date").live("input propertychange",function(){
+                console.log("click");
+                table.ajax.reload();
+                console.log(table.ajax);
+            })
+
+        })
+
+    function getDateDateFromDateTime(dateTime){
+        var date = dateTime.substr(0,10);
+        var d = date.split("-");
+        var dateData = "";
+        for (var i = 0; i < d.length; i++) {
+            dateData += d[i];
+        }
+        return dateData;
+    }
+
+    function showDetail(stockName){
+        var dateTime = $("#date").val();
+        if(dateTime.length == 0 || dateTime == null){
+            dateTime = "20160104";
+        }
+        var dateData = getDateDateFromDateTime(dateTime);
+        var curpath = window.location.href;
+        var basepath = curpath.split("/")[0];
+        console.log("basepath"+basepath);
+        var url = basepath+"/securities?name="+stockName+"&date="+dateData;
+        window.open(url);
+    }
+
+    function setCookie(name, value, expires){
+        var date = new Date();
+        date.setDate(date.getDate() + expires);
+        document.cookie = name + "=" + value + ";expires=" + date;
+    }
+
+    function getCookie(key){
+        var arryStr = document.cookie.split(";");
+        for(var i = 0; i< arryStr.length; i++){
+            var arr = arryStr[i].split("=");
+            if(arr[0] == key){
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
+    function addIntoPortfolio(stockName){
+        setCookie("date",dateData,60);
+        set
+    }
+
+
     /* Default class modification */
     $.extend($.fn.dataTableExt.oStdClasses, {
         "sWrapper": "dataTables_wrapper form-inline"
@@ -310,50 +463,8 @@
         }
     });
 
-    /* Table #example */
-    $(document).ready(function () {
-        $('.datatable').dataTable({
-            "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
-            "sPaginationType": "bootstrap",
-            "bProcessing" : true,
-            "sAjaxSource" : "/stock/list?date=20160104",//通过ajax实现分页的url路径。
-            "aoColumns" : [//初始化要显示的列
-                {
-                    "data" : "stockName",//获取列数据，跟服务器返回字段一致
-                },
-                {
-                    "data" : "date",
-                    "mRender" : function(data, type, full) {
-                        return new Date(data)//处理时间显示
-                            .toLocaleString();
-                    }
-                },
-                {
-                    "data" : "openPrice"
-                },
-                {
-                    "data" : "highPrice"
-                },
-                {
-                    "data" : "lowPrice",
 
-                },
-                {
-                    "data" : "closePrice"
-                },
-                {
-                    "data" : "tradeVolume"
-                } ],
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
-            }
-        });
-    });
 </script>
 
-
-<div style="display:none">
-    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
-</div>
 </body>
 </html>
