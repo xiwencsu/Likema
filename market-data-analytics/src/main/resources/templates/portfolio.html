@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js ie7 ie" lang="en"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js ie8 ie" lang="en"> <![endif]-->
-<!--[if IE 9]>
-<html class="no-js ie9 ie" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
 	<meta charset="utf-8"/>
 	<title>Likema</title>
@@ -26,11 +20,12 @@
 	<!-- JS Libs -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/js/libs/jquery.js"><\/script>')</script>
+	<script src="/js/libs/jquery.js"></script>
 	<script src="/js/libs/modernizr.js"></script>
 	<script src="/js/libs/selectivizr.js"></script>
 	<script src="/js/echarts.js"></script>
 	<script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
-
+	<script src="/js/echarts.min.js"></script>
 	<script>
 
         $(document).ready(function () {
@@ -94,24 +89,190 @@
 	<!-- Breadcrumbs -->
 
 	<!-- Secondary navigation in hero unit -->
-	<div class="hero-unit blow">
-		<h1>Likema</h1>
-		<p>Likema is a website that you can see, search and sort the securities listed. In addition, you can also
-			create your own portfolios of securities. We offered our users charts to intuitively see the price,
-			volumes and dividend information. According the charts it becomes very easy to analysis and decide
-			what securities to buy</p>
-		<div class="nav-secondary inverse">
-			<nav>
-				<ul>
-					<li><a class="wuxify-me" href="#table"><span class="icon-th"></span>Table</a></li>
-					<li><a class="wuxify-me" href="../charts.html"><span class="icon-signal"></span>Chart</a></li>
-					<li><a class="wuxify-me" href="../portfolio.html"><span class="icon-heart"></span>Portfolio</a><span
-							class="badge badge-inverse">6</span></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+	<div id="main1" class="hero-unit blow" style="height:600px;"></div>
+	<!--<script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main1'));
+        option = {
+            title: {
+                text: '折线图堆叠'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['周一','周二','周三','周四','周五','周六','周日']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name:'邮件营销',
+                    type:'line',
+                    stack: '总量',
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'联盟广告',
+                    type:'line',
+                    stack: '总量',
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'视频广告',
+                    type:'line',
+                    stack: '总量',
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name:'直接访问',
+                    type:'line',
+                    stack: '总量',
+                    data:[320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name:'搜索引擎',
+                    type:'line',
+                    stack: '总量',
+                    data:[820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+        myChart.setOption(option);
+	</script>-->
+	<script type="text/javascript">
+        var myLine = echarts.init(document.getElementById('main1'));
+        var lineOption = {
+            dataZoom: [
+                {
+                    type: 'slider',//数据滑块
+                    start:0,
+                    minSpan:8,    //5min
+                    // minSpan:16,   //10min
+                    // minSpan:24,   //15min
+                    // minSpan:50,   //30min
+                    dataBackground:{
+                        lineStyle:{
+                            color:'#95BC2F'
+                        },
+                        areaStyle:{
+                            color:'#95BC2F',
+                            opacity:1,
+                        }
+                    },
+                    // fillerColor:'rgba(255,255,255,.6)'
+                },
+                {
+                    type:'inside'//使鼠标在图表中时滚轮可用
+                }],
+            title : {
+                text : 'Portfolio',//标题
+                subtext : ''//副标题
+            },
+            tooltip : {
+                trigger : 'axis' //item 点在哪条线上显示哪条线上的数据，axis点在哪个坐标点上显示对于点上所有数据
+            },
+            legend : {
+                data : []
+            },
+            toolbox : {
+                show : true,
+                orient : 'vertical',
+                x : 'right',
+                y : 'center',
+                feature : {
+                    mark : {
+                        show : true
+                    },
+                    dataView : {
+                        show : true,
+                        readOnly : false
+                    },
+                    magicType : {
+                        show : true,
+                        type : [ 'line', 'bar' ]
+                    },
+                    restore : {
+                        show : true
+                    },
+                    saveAsImage : {
+                        show : true,
+                        name : '折线图'//保存的图片名次
+                    }
+                }
+            },
+            calculable : true,
+            xAxis : [ {
+                type : 'category',
+                boundaryGap : false,
+                name : '时间',
+                data : [ '' ],
+                axisLine: {onZero: false},
+                splitLine: {show: false},   //是否显示坐标轴轴线
+                //splitNumber: 20,    //坐标轴的分割段数，预估值，在类目轴中无效
+                min: 'dataMin', //特殊值，数轴上的最小值作为最小刻度
+                max: 'dataMax'  //特殊值，数轴上的最大值作为最大刻度
+            } ],
+            yAxis : [ {
+                type : 'value',
+                axisLabel : {
+                    formatter : '{value} '
+                }
+            } ],
+            grid : {
+                x : 30,//设置该图形与对应div的左边距
+                y : 30,//设置该图形与对应div的上边距
+                x2 : 50,//设置该图形与对应div的右边距
+                y2 : 50
+                //设置该图形与对应div的下边距
+            },
+            series : []
+        };
 
+        //myLine.setOption(lineOption);
+        var ajaxLine = function() {
+            $.ajax({
+                type: "GET",
+                async: false,
+                url : '/dst/getDstEcharts?stockNames=a&stockNames=aa',
+                success : function(result) {
+                    console.log(result);
+                    lineOption.xAxis[0].data = result[0];
+                    for (var i = 1; i < result.length; i++) {//循环放入数据
+                        lineOption.series[i] = result[i];
+                        lineOption.series[i].name=result[i].name;
+                        lineOption.legend.data[i]=lineOption.series[i].name;
+                    }
+                    //myLine.setOption(lineOption, true);
+                },
+                complete : function() {
+                    //请求完成的处理
+                },
+                error : function() {
+                    //请求出错处理
+                    alert("加载失败");
+                }
+            })
+        }
+        ajaxLine();
+        myLine.setOption(lineOption, true);
+	</script>
 	<div class="content">
 
 		<!-- Tab content -->
@@ -130,7 +291,7 @@
 					<!-- /Page grid cell (12 blocks - full) -->
 
 					<!-- Page grid cell (8 blocks) -->
-					<article class="span8">
+					<article class="span12">
 						<table class="datatable table table-striped table-bordered" id="table">
 							<thead>
 							<tr>
@@ -152,44 +313,6 @@
 					<!-- Page grid cell (8 blocks) -->
 
 					<!-- Page grid cell (4 blocks) -->
-					<article class="span4">
-						<h3></h3>
-						<p><strong><code>Date</code></strong>
-							<em>– This provides the date as an integer where 20100527 would represent May 27th,
-								2010.</em>
-							<abbr title="date"></abbr>
-						</p>
-						<p><strong><code>Open</code></strong>
-							<em>– The open price.</em>
-							<abbr title="first trade price"></abbr>
-						</p>
-						<p><strong><code>High</code></strong>
-							<em>– The high price. </em>
-							<abbr title="highest trade price"></abbr>
-						</p>
-						<p><strong><code>Low</code></strong>
-							<em>– The low price.</em>
-							<abbr title="lowest trade price"></abbr>
-						</p>
-						<p><strong><code>Close</code></strong>
-							<em>– The close price.</em>
-							<abbr title="last trade price"></abbr>
-						</p>
-						<p><strong><code>Volume</code></strong>
-							<em>– The trading volume during the interval. Note that it is extremely difficult
-								to get accurate volume information. The volume is adjusted for splits so that
-								the total value of shares traded remains constant even if a split occurs.
-							</em>
-							<abbr title="trade volume"></abbr>
-						</p>
-						<!--<p class="demo-btns">-->
-						<!--<button class="btn btn-info btn-wuxia">Info</button>-->
-						<!--<button class="btn btn-success btn-wuxia">Success</button>-->
-						<!--<button class="btn btn-warning btn-wuxia">Warning</button>-->
-						<!--<button class="btn btn-danger btn-wuxia">Danger</button>-->
-						<!--<button class="btn btn-inverse btn-wuxia">Inverse</button>-->
-						<!--</p>-->
-					</article>
 					<!-- Page grid cell (4 blocks) -->
 
 				</div>
@@ -219,14 +342,14 @@
 <!-- /Main footer -->
 
 <!-- Scripts -->
-<script src="${pageContext.request.contextPath}/js/navbar.js"></script>
-<script src="${pageContext.request.contextPath}/js/plugins/waypoints.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap-tooltip.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap-dropdown.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap/bootstrap-collapse.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/plugins/waypoints.min.js"></script>
+<script src="/js/bootstrap/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap/bootstrap-collapse.js"></script>
 
 <!-- jQuery DataTable -->
-<script src="${pageContext.request.contextPath}/js/plugins/dataTables/jquery.datatables.min.js"></script>
+<script src="/js/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
 <script>
     /* Default class modification */
     $.extend($.fn.dataTableExt.oStdClasses, {
@@ -315,46 +438,33 @@
             "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
             "sPaginationType": "bootstrap",
             "bProcessing" : true,
-            "sAjaxSource" : "${basePath}/testBean/testData",//通过ajax实现分页的url路径。
+            "sAjaxSource" : "/stock/list?date=20160304",//通过ajax实现分页的url路径。
             "aoColumns" : [//初始化要显示的列
                 {
-                    "mDataProp" : "date",//获取列数据，跟服务器返回字段一致
-                    "sClass" : "center",//显示样式
+                    "data" : "stockName",//获取列数据，跟服务器返回字段一致
+                },
+                {
+                    "data" : "date",
                     "mRender" : function(data, type, full) {
                         return new Date(data)//处理时间显示
-                            .toLocaleString();
+                            .toLocaleDateString();
                     }
                 },
                 {
-                    "mDataProp" : "symbol",
-                    "mRender" : function(data, type, full) {//返回自定义的样式
-                        return "<label><input type='checkbox' class='ace' /><span class='lbl'></span></label>"
-                    }
+                    "data" : "openPrice"
                 },
                 {
-                    "mDataProp" : "open"
+                    "data" : "highPrice"
                 },
                 {
-                    "mDataProp" : "high"
-                },
-                {
-                    "mDataProp" : "low",
+                    "data" : "lowPrice"
 
                 },
                 {
-                    "mDataProp" : "close",
-                    "mRender" : function(data, type, full) {
-                        return "<span class='label label-sm label-info arrowed arrowed-righ'>Sold</span>"
-                    }
+                    "data" : "closePrice"
                 },
                 {
-                    "mDataProp" : "volume",
-                    "mRender" : function(data, type, full) {
-                        return "<div class='visible-md visible-lg hidden-sm hidden-xs action-buttons'>" +
-                            "<a class='blue' href='#'><i class='icon-zoom-in bigger-130'></i></a>" +
-                            "<a class='green' href='#'><i class='icon-pencil bigger-130'></i></a>" +
-                            "<a class='red' href='#'><i class='icon-trash bigger-130'></i></a></div>"
-                    }
+                    "data" : "tradeVolume"
                 } ],
             "oLanguage": {
                 "sLengthMenu": "_MENU_ records per page"
@@ -363,9 +473,5 @@
     });
 </script>
 
-
-<div style="display:none">
-	<script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
-</div>
 </body>
 </html>
