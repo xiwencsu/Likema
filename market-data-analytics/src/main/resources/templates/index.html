@@ -242,7 +242,6 @@
 
 <script>
         $(document).ready(function () {
-
             /* Table #example */
             var table = $('.datatable').DataTable({
                 "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
@@ -291,14 +290,15 @@
                         "mDataProp" : null,
                         "mRender" : function(data, type, row){
                             // console.log("stockName in button mRender:"+data.stockName);
-                            // var id = '"' + row.id + '"';
+                            var id =  data.stockName;
+                            // console.log("id="+id);
                             var stockName = '"' + data.stockName + '"';
                             var date = '"' + data.date + '"';
                             return "<button class=\"btn btn-info btn-wuxia\" " +
                                             "onclick='showDetail("+stockName+","+date+")'>detail</button>"
                                 +"&nbsp;"
-                                + "<button class=\"btn btn-warning btn-wuxia\" " +
-                                            "onclick='addIntoPortfolio("+stockName+")'>"
+                                + "<button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
+                                            "onclick='addIntoPortfolio("+stockName+","+stockName+")'>"
                                 + "<i class='fa fa-plus'></i></button>"
                         }
                     }
@@ -360,15 +360,17 @@
     }
 
     function setCookie(name, value, expires){
+        console.log("--------------------addIntoCookies--------------------");
         var date = new Date();
         date.setDate(date.getDate() + expires);
-        document.cookie = name + "=" + value + ";expires=" + date;
+        document.cookie = name + "=" + value +";expires=" + date;
     }
 
     function getCookie(key){
-        var arryStr = document.cookie.split(";");
-        for(var i = 0; i< arryStr.length; i++){
-            var arr = arryStr[i].split("=");
+        var arrStr = document.cookie.split(";");
+        for(var i = 0; i< arrStr.length; i++){
+            var arr = arrStr[i].split("=");
+            console.log(arr[0]);
             if(arr[0] == key){
                 return arr[1];
             }
@@ -376,11 +378,48 @@
         return "";
     }
 
-    function addIntoPortfolio(stockName){
-        setCookie("date",dateData,60);
-        set
+    var stockNames = "-";
+    var seperator = "-";
+
+    function addIntoPortfolio(stockName,id){
+        stockNames += stockName + seperator;
+        setCookie("stockNames",stockNames,60);
+        console.log("cookie:"+document.cookie);
+        // console.log("id="+id);
+        var bt = document.getElementById(id);
+        var $bt = $(bt);
+        // console.log("bt:"+$bt.attr('id'));
+        $bt.removeClass("btn-warning");
+        $bt.addClass("btn-danger");
+        $bt.children("i").addClass("fa-minus").removeClass("fa-plus");
+        $bt.attr("onclick","deleteFromPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
     }
 
+    function deleteFromPortfolio(stockName,id){
+        deleteFromCookies(stockName);
+        var bt = document.getElementById(id);
+        var $bt = $(bt);
+        // console.log("bt:"+$bt.attr('id'));
+        $bt.removeClass("btn-danger");
+        $bt.addClass("btn-warning");
+        $bt.children("i").addClass("fa-plus").removeClass("fa-minus");
+        $bt.attr("onclick","addIntoPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
+        console.log("cookie:"+document.cookie);
+    }
+
+    function deleteFromCookies(stockName){
+        console.log("--------------------deleteFromCookies--------------------");
+        var curCookie = getCookie(" stockNames");
+        console.log("curCookie:"+curCookie);
+        var target = seperator+ stockName +seperator;
+        var start = curCookie.indexOf(target);
+        console.log("search:"+target);
+        console.log("start:"+start);
+        var newCookie = curCookie.substr(0,start)+curCookie.substr(start+stockName.length+1);
+        setCookie("stockNames",newCookie,60);
+        stockNames = newCookie;
+        console.log("newCookie:"+newCookie);
+    }
 
     /* Default class modification */
     $.extend($.fn.dataTableExt.oStdClasses, {
