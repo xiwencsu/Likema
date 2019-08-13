@@ -1,1 +1,8 @@
 /bin/
+/bin/
+.idea
+.gitignore
+/target
+/log
+gayg.iml
+*.iml
