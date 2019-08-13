@@ -27,6 +27,7 @@ public class MainController {
     public String charts() {
         return "charts";
 
+    }
     @RequestMapping(value = "/OHLCChart", method = RequestMethod.GET)
     public ModelAndView OHLC() {
         return new ModelAndView("OHLC");

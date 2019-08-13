@@ -2,14 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b77e34f-d950-40b0-abc9-8f9074c5d689" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Likema.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.ignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven_Settings_File/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../market-data-analytics - Eric1/src/main/java/com/citi/intern/dao/impl/StockDataFileDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../market-data-analytics - Eric1/src/main/java/com/citi/intern/mapper/impl/StockDataMapperImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../market-data-analytics - Eric1/src/main/java/com/citi/intern/service/impl/StockDataServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/DailySettlementData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/DailySettlementData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/MarketData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/model/MarketData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MarketDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MarketDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/config/Constant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/config/Constant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/DailySettlementDataDaoInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/DailySettlementDataDaoInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/MarketDataFileDaoInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/MarketDataFileDaoInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/impl/DailySettlementDataDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/impl/DailySettlementDataDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/impl/MarketDataFileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/dao/impl/MarketDataFileDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/DailySettlementDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/DailySettlementDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/DstEchartMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/DstEchartMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/MarketDataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/MarketDataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/TimelyEchartMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/TimelyEchartMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/DailySettlementDataMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/DailySettlementDataMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/DstEchartMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/DstEchartMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/MarketDataMapperImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/MarketDataMapperImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/TimelyEchartMapperImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/mapper/impl/TimelyEchartMapperImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/model/DailySettlementData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/model/DailySettlementData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/model/Echart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/model/Echart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/model/MarketData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/model/MarketData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/service/DailySettlementDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/service/DailySettlementDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/service/MarketDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/service/MarketDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/service/impl/DailySettlementDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/service/impl/DailySettlementDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/service/impl/MarketDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/service/impl/MarketDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/util/FileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/web/DailySettlementDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/web/DailySettlementDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/web/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/web/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/citi/intern/web/MarketDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/citi/intern/web/MarketDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/DailySettlementDataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/DevelopController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/MarketDataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/citi/intern/web/testBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/chart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/hello.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/portfolio.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -19,98 +70,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="613810546">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="20" />
-          <entry key="java" value="128" />
-          <entry key="js" value="3" />
-          <entry key="properties" value="3" />
-          <entry key="rnc" value="1" />
-          <entry key="xml" value="5" />
-          <entry key="xsd" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="20" />
-          <entry key="JAVA" value="128" />
-          <entry key="JavaScript" value="3" />
-          <entry key="Properties" value="3" />
-          <entry key="RNG Compact" value="1" />
-          <entry key="XML" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="581" />
-          <entry key="java" value="812" />
-          <entry key="properties" value="4" />
-          <entry key="txt" value="14" />
-          <entry key="xml" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="581" />
-          <entry key="JAVA" value="812" />
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Properties" value="4" />
-          <entry key="XML" value="24" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/DailySettlementDataController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="30" column="92" lean-forward="true" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/model/MarketData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-230">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MarketDataController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/TimeSharing.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="77" column="34" lean-forward="true" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
+              <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#1156#1188#0" />
@@ -120,13 +86,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/OHLC.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-589">
-              <caret line="165" column="24" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="95">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/dao/StockDataFileDaoInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/dao/impl/StockDataFileDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -134,8 +124,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="249">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,13 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="176" column="59" lean-forward="true" selection-start-line="176" selection-start-column="59" selection-end-line="176" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1147#1766#0" />
-                <element signature="e#1863#2414#0" />
-              </folding>
+            <state relative-caret-position="3344">
+              <caret line="176" column="59" selection-start-line="176" selection-start-column="59" selection-end-line="176" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -157,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/DailySettlementDataMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="76">
               <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
@@ -166,7 +155,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/DstEchartMapperImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
+            <state relative-caret-position="418">
               <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
             </state>
           </provider>
@@ -175,12 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="266">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -199,9 +184,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response5.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -211,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/Echarttest.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/EchartDemo.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/model/DailySettlementData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/web/HelloSpringBoot.java" />
@@ -221,18 +202,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/TimelyEchartMapperImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/OHLC.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/model/MarketData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/TimeSharing.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -241,11 +217,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-50" />
-    <option name="y" value="56" />
-    <option name="width" value="683" />
-    <option name="height" value="650" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-51" />
+    <option name="y" value="55" />
+    <option name="width" value="684" />
+    <option name="height" value="651" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -255,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -288,6 +265,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="intern" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="market-data-analytics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="market-data-analytics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="intern" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="market-data-analytics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="market-data-analytics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="intern" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="market-data-analytics" type="b2602c69:ProjectViewProjectNode" />
@@ -331,6 +326,15 @@
               <item name="market-data-analytics" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="intern" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="market-data-analytics" type="b2602c69:ProjectViewProjectNode" />
+              <item name="market-data-analytics" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -345,7 +349,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,7 +359,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565598731551" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565664501543" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -452,17 +455,17 @@
       <workItem from="1565454455066" duration="893000" />
       <workItem from="1565510194138" duration="10279000" />
       <workItem from="1565534326091" duration="26756000" />
+      <workItem from="1565662489413" duration="1611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37928000" />
+    <option name="totallyTimeSpent" value="39539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30030257" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36459175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -470,10 +473,10 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="REST Client" weight="0.65139115" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.72541606" visible="true" weight="0.39934534" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.72541606" visible="true" weight="0.39786857" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,11 +484,12 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.27458397" side_tool="true" weight="0.4893617" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3285968" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" side_tool="true" weight="0.32980332" />
+      <window_info anchor="bottom" id="REST Client" order="14" weight="0.65139115" />
+      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,13 +500,11 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" order="10" side_tool="true" weight="0.32980332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/static.js/echarts.min.js" />
@@ -593,27 +595,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/TimelyEchartMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/TimelyEchartMapper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/dao/MarketDataFileDaoInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -707,17 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/DailySettlementDataMapperImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -735,34 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/DstEchartMapperImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/DailySettlementDataMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/DailySettlementDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="30" column="92" lean-forward="true" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MarketDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        <state relative-caret-position="361">
+          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -771,33 +718,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/model/MarketData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="779">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MarketDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="176" column="59" lean-forward="true" selection-start-line="176" selection-start-column="59" selection-end-line="176" selection-end-column="59" />
+        <state relative-caret-position="532">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1147#1766#0" />
-            <element signature="e#1863#2414#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/OHLC.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-589">
+        <state relative-caret-position="3135">
           <caret line="165" column="24" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -805,14 +743,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3344">
+          <caret line="176" column="59" selection-start-line="176" selection-start-column="59" selection-end-line="176" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/DailySettlementDataMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/mapper/impl/DstEchartMapperImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/model/Echart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/TimeSharing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="77" column="34" lean-forward="true" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
+          <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#1156#1188#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/web/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/dao/StockDataFileDaoInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/dao/impl/StockDataFileDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/citi/intern/config/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
         </state>
       </provider>
     </entry>
