@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>TimeSharingChart</title>
@@ -8,12 +8,17 @@
 </head>
 
 <body>
+<input type="hidden" id="name" th:value="${name}">
+<input type="hidden" id="date" th:value="${date}">
 <div id="TimeSharingChart" style="width: 1200px; height: 600px;"></div>
 
 
 
 
 <script type="text/javascript">
+    var name = $("#name").val();
+    var date = $("#date").val();
+    console.log(name + date);
     // 初始化一个echarts的对象
     var chart =  echarts.init(document.getElementById('TimeSharingChart'));
 
@@ -23,7 +28,7 @@
     function getTimelyData(){
         $.ajax({
             type: "GET",
-            url: "/marketData/getMarketEchart?date=20160104&stockName=a",    //请求发送到TestServlet处
+            url: "/marketData/getMarketEchart?date="+date+"&stockName="+name,   //date=20160104&stockName=a",    //请求发送到TestServlet处
             data: {},
             async: false,
             dataType: "json",        //返回数据形式为json

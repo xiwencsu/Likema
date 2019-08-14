@@ -2,7 +2,7 @@ package com.citi.intern.mapper.impl;
 
 import com.citi.intern.mapper.DstEchartMapper;
 import com.citi.intern.model.DailySettlementData;
-import com.citi.intern.model.Echart;
+import com.citi.intern.wrapper.Echart;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

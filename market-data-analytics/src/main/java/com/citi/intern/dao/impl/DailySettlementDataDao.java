@@ -5,6 +5,8 @@ import com.citi.intern.dao.DailySettlementDataDaoInterface;
 import com.citi.intern.mapper.DailySettlementDataMapper;
 import com.citi.intern.model.DailySettlementData;
 import com.citi.intern.util.FileUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Component
 public class DailySettlementDataDao implements DailySettlementDataDaoInterface {
+    private static final Logger logger = LoggerFactory.getLogger(DailySettlementDataDao.class);
     @Autowired
     DailySettlementDataMapper dailySettlementDataMapper;
 
@@ -28,6 +31,7 @@ public class DailySettlementDataDao implements DailySettlementDataDaoInterface {
                 dstList.add(dst);
             }
         }
+        logger.info(dstList.toString());
         return dstList;
     }
 }

@@ -2,20 +2,25 @@ package com.citi.intern.web;
 
 import com.citi.intern.mapper.DstEchartMapper;
 import com.citi.intern.model.DailySettlementData;
-import com.citi.intern.model.Echart;
-import com.citi.intern.model.Portfolios;
+import com.citi.intern.wrapper.Echart;
 import com.citi.intern.service.DailySettlementDataService;
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/dst")
 public class DailySettlementDataController {
+    private static final Logger logger = LoggerFactory.getLogger(DailySettlementDataController.class);
     @Resource
     DailySettlementDataService dailySettlementDataService;
 
@@ -23,21 +28,53 @@ public class DailySettlementDataController {
     DstEchartMapper dstEchartMapper;
 
     @GetMapping("/list")
-    public List<DailySettlementData> list(@RequestParam String stockName) {
-        return dailySettlementDataService.queryDailySettlementDataByStock(stockName);
+    public List<DailySettlementData> list(HttpServletRequest request,  @RequestParam String stockName) {
+        logger.info(request.toString());
+        logger.info("stockName :" + stockName);
+        List<DailySettlementData> dailySettlementDataList = dailySettlementDataService.queryDailySettlementDataByStock(stockName);
+        logger.info(dailySettlementDataList.toString());
+        return dailySettlementDataList;
     }
 
     @GetMapping("/count")
-    public Integer count(@RequestParam String stockName) {
-        return dailySettlementDataService.queryDailySettlementDataByStock(stockName).size();
+    public Integer count(HttpServletRequest request, @RequestParam String stockName) {
+        logger.info(request.toString());
+        logger.info("stockName :" + stockName);
+        Integer size = dailySettlementDataService.queryDailySettlementDataByStock(stockName).size();
+        logger.info("size: " + size );
+        return size;
     }
 
     @GetMapping("/getDstEchart")
-    public Echart getDstEchart(@RequestParam String stockName) {
-        return dstEchartMapper.convert(dailySettlementDataService.queryDailySettlementDataByStock(stockName));
+    public Echart getDstEchart(HttpServletRequest request, @RequestParam String stockName) {
+        logger.info(request.toString());
+        logger.info("stockName :" + stockName);
+        List<DailySettlementData> dailySettlementDataList = dailySettlementDataService.queryDailySettlementDataByStock(stockName);
+        logger.info(dailySettlementDataList.toString());
+        Echart echart = dstEchartMapper.convert(dailySettlementDataList);
+        logger.info(echart.toString());
+        return echart;
     }
     @GetMapping("/getDstEcharts")
-    public List<Object> getDstEchart(@RequestParam String[] stockNames) {
-        return dailySettlementDataService.queryDailySettlementDataByStocks(stockNames);
+    public List<Object> getDstEcharts(HttpServletRequest request, @RequestParam String stockNames) {
+        logger.info(request.toString());
+        logger.info("stockNames :" + stockNames);
+        String[] stockNamesArray = stockNames.split("-");
+        if(stockNames == null || stockNames.length() == 0){
+            logger.warn("stockNames is null or '' there is no security");
+            return null;
+        }
+        if(stockNamesArray.length == 1){
+            logger.warn("stockNames equal '-' there is no security");
+            return null;
+        }
+        List<String> stockNamesArrayResult = new ArrayList<>(); // Raw Collection
+        for(int i=1; i<stockNamesArray.length; i++){
+            stockNamesArrayResult.add(stockNamesArray[i]);
+        }
+        logger.info("stockNamesArrayResult :" + stockNamesArrayResult);
+        List<Object> stocks = dailySettlementDataService.queryDailySettlementDataByStocks(stockNamesArrayResult);
+        logger.info(stocks.toString());
+        return stocks;
     }
 }

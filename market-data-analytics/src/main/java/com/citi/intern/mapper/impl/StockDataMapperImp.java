@@ -1,22 +1,22 @@
 package com.citi.intern.mapper.impl;
 
-import com.citi.intern.mapper.StockDataMapper;
-import com.citi.intern.model.StockData;
+import com.citi.intern.mapper.SecuritiesDataMapper;
+import com.citi.intern.model.SecurityData;
 import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 @Component
-public class StockDataMapperImp implements StockDataMapper {
+public class StockDataMapperImp implements SecuritiesDataMapper {
     @Override
-    public StockData convert(String stockDataStr) {
+    public SecurityData convert(String stockDataStr) {
         try{
             String[] strArray = new String[15];
             String[] stockDataStrArr = stockDataStr.split(",");
             System.arraycopy(stockDataStrArr,0,strArray,0,stockDataStrArr.length);
 
-            StockData stockData = new StockData();
+            SecurityData stockData = new SecurityData();
             //setup date
             DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
             String dataStr = strArray[0];

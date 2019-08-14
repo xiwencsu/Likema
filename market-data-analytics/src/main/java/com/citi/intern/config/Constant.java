@@ -18,4 +18,11 @@ public final class Constant {
     public static String getDailySettlementDataFileAbsPath(String stockName){
         return DAILY_SETTLEMENT_DATA_ROOT_DIR+"\\"+stockName+".csv";
     }
+
+    public static final String STOCK_DATA_DAILY_ROOT_DIR = "..\\Day Data";
+
+    public static String getStockDateDailyAsPath(String date){
+        return STOCK_DATA_DAILY_ROOT_DIR + "\\" + date +".csv";
+    }
+
 }

@@ -1,8 +1,7 @@
 package com.citi.intern.mapper.impl;
 
 import com.citi.intern.mapper.TimelyEchartMapper;
-import com.citi.intern.model.DailySettlementData;
-import com.citi.intern.model.Echart;
+import com.citi.intern.wrapper.Echart;
 import com.citi.intern.model.MarketData;
 import org.springframework.stereotype.Component;
 

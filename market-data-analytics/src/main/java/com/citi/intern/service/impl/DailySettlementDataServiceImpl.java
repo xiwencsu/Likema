@@ -2,8 +2,7 @@ package com.citi.intern.service.impl;
 
 import com.citi.intern.dao.DailySettlementDataDaoInterface;
 import com.citi.intern.model.DailySettlementData;
-import com.citi.intern.model.EchartsEntity;
-import com.citi.intern.model.Portfolios;
+import com.citi.intern.wrapper.EchartsPortfoliosEntity;
 import com.citi.intern.service.DailySettlementDataService;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +21,7 @@ public class DailySettlementDataServiceImpl implements DailySettlementDataServic
     }
 
     @Override
-    public List<Object> queryDailySettlementDataByStocks(String[] stockNames) {
+    public List<Object> queryDailySettlementDataByStocks(List<String> stockNames) {
 //        Portfolios portfolios = new Portfolios();
         List<Object> stocks = new ArrayList<>();
         List<String> categories = new ArrayList<>();
@@ -40,14 +39,12 @@ public class DailySettlementDataServiceImpl implements DailySettlementDataServic
                 stocks.add(categories);
                 addCategories = Boolean.FALSE;
             }
-            EchartsEntity echartsEntity = new EchartsEntity();
-            echartsEntity.setName(stockName);
-            echartsEntity.setType("line");
-            echartsEntity.setData(values);
-            stocks.add(echartsEntity);
+            EchartsPortfoliosEntity echartsPortfoliosEntity = new EchartsPortfoliosEntity();
+            echartsPortfoliosEntity.setName(stockName);
+            echartsPortfoliosEntity.setType("line");
+            echartsPortfoliosEntity.setData(values);
+            stocks.add(echartsPortfoliosEntity);
         }
-//        portfolios.setStocks(stocks);
-//        return portfolios;
         return stocks;
     }
 }

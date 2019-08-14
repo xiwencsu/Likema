@@ -52,6 +52,9 @@
             // Dropdowns
             $('.dropdown-toggle').dropdown();
 
+            //Date
+            $('#date').val("2016-01-04");
+
 
         });
     </script>
@@ -72,15 +75,10 @@
             <a class="brand" href="#">Likema</a>
             <nav class="nav-collapse navigation">
                 <ul class="nav" role="navigation">
-                    <li class="active"><a href="#" title="Homepage dashboard"><span class="icon-home"></span>
-                        Dashboard</a></li>
-                    <li><a href="../charts.html" title="Chart"><span class="icon-tasks"></span> Chart</a></li>
+                    <li class="active"><a href="#" title="Home"><span class="icon-home"></span>
+                        Home</a></li>
                     <li><a href="#table" title="Table"><span class="icon-table"></span> Tables</a>
-                    </li>
-                    <li class="divider-vertical"></li>
-                    <li><a href="../portfolio.html" title="Buttons in navbar!" class="btn-wuxia-navbar">
-                        <div class="btn btn-wuxia"><span class="icon-key"></span> Portfolio</div>
-                    </a></li>
+                    <li><a  onclick="clickPortfolios() " title="Portfolios"><span class="icon-tasks"></span> Portfolios</a></li>
                 </ul>
             </nav>
         </div>
@@ -108,9 +106,9 @@
             <nav>
                 <ul>
                     <li><a class="wuxify-me" href="#table"><span class="icon-th"></span>Table</a></li>
-                    <li><a class="wuxify-me" href="../charts.html"><span class="icon-signal"></span>Chart</a></li>
-                    <li><a class="wuxify-me" href="../portfolio.html"><span class="icon-heart"></span>Portfolio</a><span
-                            class="badge badge-inverse">6</span></li>
+                    <li><a class="wuxify-me" href="#"><span class="icon-signal"></span>Chart</a></li>
+                    <li><a class="wuxify-me" onclick="clickPortfolios()"><span class="icon-heart"></span>Portfolio</a><span
+                            id="portfolios-count" class="badge badge-inverse">0</span></li>
                 </ul>
             </nav>
         </div>
@@ -139,7 +137,7 @@
                         <div>
                             <input id="date" type="date"/>
                             <!--<button id="dateSelect" class="btn btn-default">-->
-                                <i style="color: #d14;" class="fa fa-calendar fa-2x"></i>
+                            <i style="color: #d14;" class="fa fa-calendar fa-2x"></i>
                             <!--</button>-->
                         </div>
 
@@ -166,41 +164,41 @@
 
                     <!-- Page grid cell (4 blocks) -->
                     <!--<article class="span4">-->
-                        <!--<p><strong><code>Date</code></strong>-->
-                            <!--<em>– This provides the date as an integer where 20100527 would represent May 27th,-->
-                                <!--2010.</em>-->
-                            <!--<abbr title="date"></abbr>-->
-                        <!--</p>-->
-                        <!--<p><strong><code>Open</code></strong>-->
-                            <!--<em>– The open price.</em>-->
-                            <!--<abbr title="first trade price"></abbr>-->
-                        <!--</p>-->
-                        <!--<p><strong><code>High</code></strong>-->
-                            <!--<em>– The high price. </em>-->
-                            <!--<abbr title="highest trade price"></abbr>-->
-                        <!--</p>-->
-                        <!--<p><strong><code>Low</code></strong>-->
-                            <!--<em>– The low price.</em>-->
-                            <!--<abbr title="lowest trade price"></abbr>-->
-                        <!--</p>-->
-                        <!--<p><strong><code>Close</code></strong>-->
-                            <!--<em>– The close price.</em>-->
-                            <!--<abbr title="last trade price"></abbr>-->
-                        <!--</p>-->
-                        <!--<p><strong><code>Volume</code></strong>-->
-                            <!--<em>– The trading volume during the interval. Note that it is extremely difficult-->
-                                <!--to get accurate volume information. The volume is adjusted for splits so that-->
-                                <!--the total value of shares traded remains constant even if a split occurs.-->
-                            <!--</em>-->
-                            <!--<abbr title="trade volume"></abbr>-->
-                        <!--</p>-->
-                        <!--&lt;!&ndash;<p class="demo-btns">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button class="btn btn-info btn-wuxia">Info</button>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button class="btn btn-success btn-wuxia">Success</button>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button class="btn btn-warning btn-wuxia">Warning</button>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button class="btn btn-danger btn-wuxia">Danger</button>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button class="btn btn-inverse btn-wuxia">Inverse</button>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                    <!--<p><strong><code>Date</code></strong>-->
+                    <!--<em>– This provides the date as an integer where 20100527 would represent May 27th,-->
+                    <!--2010.</em>-->
+                    <!--<abbr title="date"></abbr>-->
+                    <!--</p>-->
+                    <!--<p><strong><code>Open</code></strong>-->
+                    <!--<em>– The open price.</em>-->
+                    <!--<abbr title="first trade price"></abbr>-->
+                    <!--</p>-->
+                    <!--<p><strong><code>High</code></strong>-->
+                    <!--<em>– The high price. </em>-->
+                    <!--<abbr title="highest trade price"></abbr>-->
+                    <!--</p>-->
+                    <!--<p><strong><code>Low</code></strong>-->
+                    <!--<em>– The low price.</em>-->
+                    <!--<abbr title="lowest trade price"></abbr>-->
+                    <!--</p>-->
+                    <!--<p><strong><code>Close</code></strong>-->
+                    <!--<em>– The close price.</em>-->
+                    <!--<abbr title="last trade price"></abbr>-->
+                    <!--</p>-->
+                    <!--<p><strong><code>Volume</code></strong>-->
+                    <!--<em>– The trading volume during the interval. Note that it is extremely difficult-->
+                    <!--to get accurate volume information. The volume is adjusted for splits so that-->
+                    <!--the total value of shares traded remains constant even if a split occurs.-->
+                    <!--</em>-->
+                    <!--<abbr title="trade volume"></abbr>-->
+                    <!--</p>-->
+                    <!--&lt;!&ndash;<p class="demo-btns">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button class="btn btn-info btn-wuxia">Info</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button class="btn btn-success btn-wuxia">Success</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button class="btn btn-warning btn-wuxia">Warning</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button class="btn btn-danger btn-wuxia">Danger</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button class="btn btn-inverse btn-wuxia">Inverse</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
                     <!--</article>-->
                     <!-- Page grid cell (4 blocks) -->
 
@@ -241,100 +239,100 @@
 
 
 <script>
-        $(document).ready(function () {
-            /* Table #example */
-            var table = $('.datatable').DataTable({
-                "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
-                "sPaginationType": "bootstrap",
-                "bProcessing" : false,
-                ajax : {
-                    "url":"/stock/list",
-                    "data": { date : function() {
-                            var date = $("#date").val();
-                            console.log("date:" + date);
-                            if (date.length == 0 || date == null) {
-                                return "20160104";
-                            } else {
-                                var d = date.split("-");
-                                var dateData = "";
-                                for (var i = 0; i < d.length; i++) {
-                                    dateData += d[i];
-                                }
-                                console.log("dateData:"+dateData);
-                                return dateData;
+    $(document).ready(function () {
+        /* Table #example */
+        var table = $('.datatable').DataTable({
+            "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span4'i><'span4'p>>",
+            "sPaginationType": "bootstrap",
+            "bProcessing" : false,
+            ajax : {
+                "url":"/stock/list",
+                "data": { date : function() {
+                        var date = $("#date").val();
+                        console.log("date:" + date);
+                        if (date.length == 0 || date == null) {
+                            return "20160104";
+                        } else {
+                            var d = date.split("-");
+                            var dateData = "";
+                            for (var i = 0; i < d.length; i++) {
+                                dateData += d[i];
                             }
-                        }}
-                } ,//通过ajax实现分页的url路径。
-                "aoColumns" : [//初始化要显示的列
-                    {
-                        "data" : "stockName",//获取列数据，跟服务器返回字段一致
-                    },
-                    {
-                        "data" : "date",
-                        "mRender" : function(data, type, full) {
-                            return new Date(data)//处理时间显示
-                                .toLocaleDateString();
+                            console.log("dateData:"+dateData);
+                            return dateData;
                         }
-                    },
-                    {
-                        "data" : "openPrice"},
-                    {
-                        "data" : "highPrice" },
-                    {
-                        "data" : "lowPrice"},
-                    {
-                        "data" : "closePrice"},
-                    {
-                        "data" : "tradeVolume"},
-                    {
-                        "mDataProp" : null,
-                        "mRender" : function(data, type, row){
-                            // console.log("stockName in button mRender:"+data.stockName);
-                            var id =  data.stockName;
-                            // console.log("id="+id);
-                            var stockName = '"' + data.stockName + '"';
-                            var date = '"' + data.date + '"';
-                            return "<button class=\"btn btn-info btn-wuxia\" " +
-                                            "onclick='showDetail("+stockName+","+date+")'>detail</button>"
-                                +"&nbsp;"
-                                + "<button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
-                                            "onclick='addIntoPortfolio("+stockName+","+stockName+")'>"
-                                + "<i class='fa fa-plus'></i></button>"
-                        }
-                    }
-                ],
-                "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page"
+                    }}
+            } ,//通过ajax实现分页的url路径。
+            "aoColumns" : [//初始化要显示的列
+                {
+                    "data" : "stockName",//获取列数据，跟服务器返回字段一致
                 },
-                "fnFormatNumber": function ( iIn ) {
-                    console.log("fnFormatNumber-------------------------------");
-                    console.log("iIn="+iIn);
-                    if ( iIn < 1000 ) {
-                        return iIn;
-                    } else {
-                        var
-                            s=(iIn+""),
-                            a=s.split(""), out="",
-                            iLen=s.length;
-
-                        for ( var i=0 ; i<iLen ; i++ ) {
-                            if ( i%3 === 0 && i !== 0 ) {
-                                out = ","+out;
-                            }
-                            out = a[iLen-i-1]+out;
-                        }
+                {
+                    "data" : "date",
+                    "mRender" : function(data, type, full) {
+                        return new Date(data)//处理时间显示
+                            .toLocaleDateString();
                     }
-                    return out;
+                },
+                {
+                    "data" : "openPrice"},
+                {
+                    "data" : "highPrice" },
+                {
+                    "data" : "lowPrice"},
+                {
+                    "data" : "closePrice"},
+                {
+                    "data" : "tradeVolume"},
+                {
+                    "mDataProp" : null,
+                    "mRender" : function(data, type, row){
+                        // console.log("stockName in button mRender:"+data.stockName);
+                        var id =  data.stockName;
+                        // console.log("id="+id);
+                        var stockName = '"' + data.stockName + '"';
+                        var date = '"' + data.date + '"';
+                        return "<button class=\"btn btn-info btn-wuxia\" " +
+                            "onclick='showDetail("+stockName+","+date+")'>detail</button>"
+                            +"&nbsp;"
+                            + "<button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
+                            "onclick='addIntoPortfolio("+stockName+","+stockName+")'>"
+                            + "<i class='fa fa-plus'></i></button>"
+                    }
                 }
-            })
+            ],
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ records per page"
+            },
+            "fnFormatNumber": function ( iIn ) {
+                console.log("fnFormatNumber-------------------------------");
+                console.log("iIn="+iIn);
+                if ( iIn < 1000 ) {
+                    return iIn;
+                } else {
+                    var
+                        s=(iIn+""),
+                        a=s.split(""), out="",
+                        iLen=s.length;
 
-            $("#date").live("input propertychange",function(){
-                console.log("click");
-                table.ajax.reload();
-                console.log(table.ajax);
-            })
-
+                    for ( var i=0 ; i<iLen ; i++ ) {
+                        if ( i%3 === 0 && i !== 0 ) {
+                            out = ","+out;
+                        }
+                        out = a[iLen-i-1]+out;
+                    }
+                }
+                return out;
+            }
         })
+
+        $("#date").live("input propertychange",function(){
+            console.log("click");
+            table.ajax.reload();
+            console.log(table.ajax);
+        })
+
+    })
 
     function getDateDateFromDateTime(dateTime){
         var date = dateTime.substr(0,10);
@@ -380,8 +378,11 @@
 
     var stockNames = "-";
     var seperator = "-";
+    var portfoliosCount = 0;
 
     function addIntoPortfolio(stockName,id){
+        portfoliosCount += 1;
+        $("#portfolios-count").val(portfoliosCount);
         stockNames += stockName + seperator;
         setCookie("stockNames",stockNames,60);
         console.log("cookie:"+document.cookie);
@@ -396,6 +397,8 @@
     }
 
     function deleteFromPortfolio(stockName,id){
+        portfoliosCount -= 1;
+        $("#portfolios-count").val(portfoliosCount);
         deleteFromCookies(stockName);
         var bt = document.getElementById(id);
         var $bt = $(bt);
@@ -419,6 +422,23 @@
         setCookie("stockNames",newCookie,60);
         stockNames = newCookie;
         console.log("newCookie:"+newCookie);
+    }
+
+    function clickPortfolios(){
+        console.log(getCookie("stockNames"));
+        var curpath = window.location.href;
+        var basepath = curpath.split("/")[0];
+        var url = basepath+"/portfolios";
+        window.open(url);
+        // if(getCookie("stockNames") == undefined || getCookie("stockNames") == ""
+        // ||getCookie("stockNames")== "-"){
+        //     alert("Please select security !!!");
+        // }else{
+        //     var curpath = window.location.href;
+        //     var basepath = curpath.split("/")[0];
+        //     var url = basepath+"/portfolios";
+        //     window.open(url);
+        // }
     }
 
     /* Default class modification */
