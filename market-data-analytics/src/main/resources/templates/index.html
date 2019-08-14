@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js ie7 ie" lang="en"> <![endif]-->
+<html class="no-js ie7 ie" lang="en" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
 <!--[if IE 8]>
 <html class="no-js ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="no-js ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
     <title>Likema</title>
@@ -43,6 +43,7 @@
             $('.navbar [title]').tooltip({
                 placement: 'bottom'
             });
+            $( document ).tooltip();
 
             // Content tooltips
             $('[role=main] [title]').tooltip({
@@ -63,7 +64,7 @@
 <body>
 
 <!-- Main navigation bar -->
-<header class="navbar navbar-fixed-top">
+<header th:fragment="common" class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".user">
@@ -75,10 +76,15 @@
             <a class="brand" href="#">Likema</a>
             <nav class="nav-collapse navigation">
                 <ul class="nav" role="navigation">
-                    <li class="active"><a href="#" title="Home"><span class="icon-home"></span>
+                    <li class="active"><a href="#" title="Homepage dashboard"><span class="icon-home"></span>
                         Home</a></li>
-                    <li><a href="#table" title="Table"><span class="icon-table"></span> Tables</a>
-                    <li><a  onclick="clickPortfolios() " title="Portfolios"><span class="icon-tasks"></span> Portfolios</a></li>
+                    <li><a href="#table" title="All securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="/portfolios" title="Portfolios demo"><span class="icon-table"></span>Portfolios Demo</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#" onclick="clickMyPortfolios()" title="My portfolio" class="btn-wuxia-navbar">
+                        <div class="btn btn-wuxia"><span class="icon-key"></span> My Portfolio</div>
+                    </a></li>
                 </ul>
             </nav>
         </div>
@@ -105,10 +111,10 @@
         <div class="nav-secondary inverse">
             <nav>
                 <ul>
-                    <li><a class="wuxify-me" href="#table"><span class="icon-th"></span>Table</a></li>
-                    <li><a class="wuxify-me" href="#"><span class="icon-signal"></span>Chart</a></li>
-                    <li><a class="wuxify-me" onclick="clickPortfolios()"><span class="icon-heart"></span>Portfolio</a><span
-                            id="portfolios-count" class="badge badge-inverse">0</span></li>
+                    <li><a class="wuxify-me" href="#table"><span class="icon-th"></span>Securities</a></li>
+                    <li><a class="wuxify-me" href="/portfolios"><span class="icon-signal"></span>Portfolios</a></li>
+                    <li><a class="wuxify-me" href="#" onclick="clickMyPortfolios()"><span class="icon-heart"></span>My Portfolio</a>
+                        <span id="securityCount" class="badge badge-inverse">0</span></li>
                 </ul>
             </nav>
         </div>
@@ -160,48 +166,6 @@
                         </table>
                     </article>
 
-                    <!-- Page grid cell (8 blocks) -->
-
-                    <!-- Page grid cell (4 blocks) -->
-                    <!--<article class="span4">-->
-                    <!--<p><strong><code>Date</code></strong>-->
-                    <!--<em>– This provides the date as an integer where 20100527 would represent May 27th,-->
-                    <!--2010.</em>-->
-                    <!--<abbr title="date"></abbr>-->
-                    <!--</p>-->
-                    <!--<p><strong><code>Open</code></strong>-->
-                    <!--<em>– The open price.</em>-->
-                    <!--<abbr title="first trade price"></abbr>-->
-                    <!--</p>-->
-                    <!--<p><strong><code>High</code></strong>-->
-                    <!--<em>– The high price. </em>-->
-                    <!--<abbr title="highest trade price"></abbr>-->
-                    <!--</p>-->
-                    <!--<p><strong><code>Low</code></strong>-->
-                    <!--<em>– The low price.</em>-->
-                    <!--<abbr title="lowest trade price"></abbr>-->
-                    <!--</p>-->
-                    <!--<p><strong><code>Close</code></strong>-->
-                    <!--<em>– The close price.</em>-->
-                    <!--<abbr title="last trade price"></abbr>-->
-                    <!--</p>-->
-                    <!--<p><strong><code>Volume</code></strong>-->
-                    <!--<em>– The trading volume during the interval. Note that it is extremely difficult-->
-                    <!--to get accurate volume information. The volume is adjusted for splits so that-->
-                    <!--the total value of shares traded remains constant even if a split occurs.-->
-                    <!--</em>-->
-                    <!--<abbr title="trade volume"></abbr>-->
-                    <!--</p>-->
-                    <!--&lt;!&ndash;<p class="demo-btns">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button class="btn btn-info btn-wuxia">Info</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button class="btn btn-success btn-wuxia">Success</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button class="btn btn-warning btn-wuxia">Warning</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button class="btn btn-danger btn-wuxia">Danger</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button class="btn btn-inverse btn-wuxia">Inverse</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                    <!--</article>-->
-                    <!-- Page grid cell (4 blocks) -->
-
                 </div>
                 <!-- Grid row -->
 
@@ -229,7 +193,7 @@
 <!-- /Main footer -->
 
 <!-- Scripts -->
-<script src="/js/navbar.js"></script>
+<!--<script src="/js/navbar.js"></script>-->
 <script src="/js/plugins/waypoints.min.js"></script>
 <script src="/js/bootstrap/bootstrap-tooltip.js"></script>
 <script src="/js/bootstrap/bootstrap-dropdown.js"></script>
@@ -292,12 +256,12 @@
                         // console.log("id="+id);
                         var stockName = '"' + data.stockName + '"';
                         var date = '"' + data.date + '"';
-                        return "<button class=\"btn btn-info btn-wuxia\" " +
-                            "onclick='showDetail("+stockName+","+date+")'>detail</button>"
+                        return "<a title='Go to see the plots of this security'><button class=\"btn btn-info btn-wuxia\" " +
+                            "onclick='showDetail("+stockName+","+date+")'>plots</button></a>"
                             +"&nbsp;"
-                            + "<button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
+                            + "<a title='Add this security to your own portfolio'><button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
                             "onclick='addIntoPortfolio("+stockName+","+stockName+")'>"
-                            + "<i class='fa fa-plus'></i></button>"
+                            + "<i class='fa fa-plus'></i></button></a>"
                     }
                 }
             ],
@@ -333,6 +297,18 @@
         })
 
     })
+
+
+
+    $('.btn-info').tooltip({
+        placement: 'bottom',
+        text: 'Go to see the plots of this security'
+    });
+
+    $('.btn-warning').tooltip({
+        placement: 'bottom',
+        text: 'Add this security to your own portfolio'
+    });
 
     function getDateDateFromDateTime(dateTime){
         var date = dateTime.substr(0,10);
@@ -378,11 +354,21 @@
 
     var stockNames = "-";
     var seperator = "-";
-    var portfoliosCount = 0;
+    var count = 0
+    function changeSecurityNum(cookie,key){
+        var arrStr = cookie.split(";");
+        for(var i=0; i<arrStr.length; i++){
+            var arr = arrStr[i].split("=");
+            if(arr[0] == key){
+                var sequrities = arr[1].split("-");
+                count = sequrities.length - 2;
+                $("#securityCount").html(count);
+            }
+        }
+        return 0;
+    }
 
     function addIntoPortfolio(stockName,id){
-        portfoliosCount += 1;
-        $("#portfolios-count").val(portfoliosCount);
         stockNames += stockName + seperator;
         setCookie("stockNames",stockNames,60);
         console.log("cookie:"+document.cookie);
@@ -394,11 +380,11 @@
         $bt.addClass("btn-danger");
         $bt.children("i").addClass("fa-minus").removeClass("fa-plus");
         $bt.attr("onclick","deleteFromPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
+
+        changeSecurityNum(document.cookie," stockNames");
     }
 
     function deleteFromPortfolio(stockName,id){
-        portfoliosCount -= 1;
-        $("#portfolios-count").val(portfoliosCount);
         deleteFromCookies(stockName);
         var bt = document.getElementById(id);
         var $bt = $(bt);
@@ -408,6 +394,8 @@
         $bt.children("i").addClass("fa-plus").removeClass("fa-minus");
         $bt.attr("onclick","addIntoPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
         console.log("cookie:"+document.cookie);
+
+        changeSecurityNum(document.cookie," stockNames");
     }
 
     function deleteFromCookies(stockName){
@@ -424,21 +412,16 @@
         console.log("newCookie:"+newCookie);
     }
 
-    function clickPortfolios(){
-        console.log(getCookie("stockNames"));
-        var curpath = window.location.href;
-        var basepath = curpath.split("/")[0];
-        var url = basepath+"/portfolios";
-        window.open(url);
-        // if(getCookie("stockNames") == undefined || getCookie("stockNames") == ""
-        // ||getCookie("stockNames")== "-"){
-        //     alert("Please select security !!!");
-        // }else{
-        //     var curpath = window.location.href;
-        //     var basepath = curpath.split("/")[0];
-        //     var url = basepath+"/portfolios";
-        //     window.open(url);
-        // }
+    function clickMyPortfolios(){
+        if(count == 0){
+            alert("You have't select any securities！！！");
+        }else {
+            console.log(getCookie("stockNames"));
+            var curpath = window.location.href;
+            var basepath = curpath.split("/")[0];
+            var url = basepath+"/portfolios";
+            window.open(url);
+        }
     }
 
     /* Default class modification */

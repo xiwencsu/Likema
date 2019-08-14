@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js ie7 ie" lang="en" xmlns:th="http://www.w3.org/1999/xhtml"> <![endif]-->
+<html class="no-js ie7 ie" lang="en" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
 <!--[if IE 8]>
 <html class="no-js ie8 ie" lang="en"> <![endif]-->
 <!--[if IE 9]>
 <html class="no-js ie9 ie" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
     <title>Likema</title>
@@ -43,6 +43,7 @@
             $('.navbar [title]').tooltip({
                 placement: 'bottom'
             });
+            $( document ).tooltip();
 
             // Content tooltips
             $('[role=main] [title]').tooltip({
@@ -52,6 +53,9 @@
             // Dropdowns
             $('.dropdown-toggle').dropdown();
 
+            //Date
+            $('#date').val("2016-01-04");
+
 
         });
     </script>
@@ -60,7 +64,7 @@
 <body>
 
 <!-- Main navigation bar -->
-<header class="navbar navbar-fixed-top">
+<header th:fragment="common" class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".user">
@@ -69,19 +73,23 @@
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".navigation">
                 <span class="icon-chevron-down"></span>
             </button>
-            <a class="brand" href="#">Likema</a>
+            <a class="brand" href="/index">Likema</a>
             <nav class="nav-collapse navigation">
                 <ul class="nav" role="navigation">
-                    <li ><a href="#" title="Home"><span class="icon-home"></span>
+                    <li class="active"><a href="/index" title="Homepage dashboard"><span class="icon-home"></span>
                         Home</a></li>
-                    <li><a href="#table" title="Table"><span class="icon-table"></span> Tables</a>
-                    <li class="active"><a  onclick="clickPortfolios() " title="Portfolios"><span class="icon-tasks"></span> Portfolios</a></li>
+                    <li><a href="/index" title="All securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="#" title="Portfolios demo"><span class="icon-table"></span>Portfolios Demo</a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="/myPortfolio" title="My portfolio" class="btn-wuxia-navbar">
+                        <div class="btn btn-wuxia"><span class="icon-key"></span> My Portfolio</div>
+                    </a></li>
                 </ul>
             </nav>
         </div>
     </div>
 </header>
-<!-- /Main navigation bar -->
 
 <!-- Main content -->
 <div class="container" role="main">
@@ -123,6 +131,9 @@
                             </p>
                             <p><strong><code>Summary</code></strong>
                                 <em> - </em> <em th:text="${portfolio.summary}"></em>
+                            </p>
+                            <p><strong><code>Securities</code></strong>
+                                <em> - </em> <em th:text="${portfolio.stockNames}"></em>
                             </p>
                         </article>
                         <!--Page grid cell (4 blocks) -->
@@ -177,19 +188,19 @@
             toolbox : {
                 show : true,
                 orient : 'vertical',
+                showTitle:false,
                 x : 'right',
                 y : 'center',
                 feature : {
                     mark : {
                         show : true
                     },
+                    dataZoom : {
+                        show: true
+                    },
                     dataView : {
                         show : true,
                         readOnly : false
-                    },
-                    magicType : {
-                        show : true,
-                        type : [ 'line', 'bar' ]
                     },
                     restore : {
                         show : true
@@ -199,6 +210,16 @@
                         name : portfolioName//保存的图片名次
                     }
                 }
+            },
+            dataZoom : {
+                show : true,
+                realtime: true,
+                x:60,
+                y:280,
+                height:20,
+                width:580,
+                start : 0,
+                end : 100
             },
             calculable : true,
             xAxis : [ {
@@ -239,6 +260,9 @@
                     lineOption.xAxis[0].data = result[0];
                     for (var i = 1; i < result.length; i++) {//循环放入数据
                         lineOption.series[i] = result[i];
+                        lineOption.series[i].name = result[i].name;
+                        lineOption.legend.data[i]=result[i].name;
+
                     }
                     myLine.setOption(lineOption, true);
                 },

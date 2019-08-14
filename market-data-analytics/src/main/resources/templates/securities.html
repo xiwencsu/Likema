@@ -8,7 +8,7 @@
 <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
-    <title>Likema-securities</title>
+    <title>Likema</title>
     <meta name="description" content=""/>
     <meta name="author" content="Walking Pixels | www.walkingpixels.com"/>
     <meta name="robots" content="index, follow"/>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
 
     <!-- Fav and touch icons -->
-    <!--<link rel="shortcut icon" href="/img/icons/favicon.ico"/>-->
+    <link rel="shortcut icon" href="/img/icons/favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/icons/apple-touch-icon-114-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/icons/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" href="/img/icons/apple-touch-icon-57-precomposed.png"/>
@@ -32,6 +32,35 @@
     <script src="/js/echarts.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .switch{
+            float: right;
+            padding-right: 150px;
+            margin-top: -500px;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            // Navbar tooltips
+            $('.navbar [title]').tooltip({
+                placement: 'bottom'
+            });
+
+            // Content tooltips
+            $('[role=main] [title]').tooltip({
+                placement: 'top'
+            });
+
+            // Dropdowns
+            $('.dropdown-toggle').dropdown();
+
+            //Date
+            $('#date').val("2016-01-04");
+
+        });
+    </script>
 </head>
 <body>
 
@@ -48,14 +77,14 @@
             <a class="brand" href="#">Likema</a>
             <nav class="nav-collapse navigation">
                 <ul class="nav" role="navigation">
-                    <li class="active"><a href="#" title="Homepage dashboard"><span class="icon-home"></span>
-                        Dashboard</a></li>
-                    <li><a href="../charts.html" title="Chart"><span class="icon-tasks"></span> Chart</a></li>
-                    <li><a href="#table" title="Table"><span class="icon-table"></span> Tables</a>
+                    <li><a href="/index" title="Homepage"><span class="icon-home"></span>
+                        Home</a></li>
+                    <li><a href="/index#table.html" title="All Securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="/portfolios" title="Portfolio Demo"><span class="icon-table"></span>Portfolio Demo</a>
                     </li>
                     <li class="divider-vertical"></li>
-                    <li><a href="../portfolio.html" title="Buttons in navbar!" class="btn-wuxia-navbar">
-                        <div class="btn btn-wuxia"><span class="icon-key"></span> Portfolio</div>
+                    <li><a href="/myPortfolio" title="My Portfolio" class="btn-wuxia-navbar">
+                        <div class="btn btn-wuxia"><span class="icon-key"></span>My Portfolio</div>
                     </a></li>
                 </ul>
             </nav>
@@ -70,7 +99,7 @@
     <input type="hidden" id="date" th:value="${date}">
     <!-- Breadcrumbs -->
     <ul class="breadcrumb">
-        <li  class="active"><a href="#"><span class="icon-home"></span> Home</a></li>
+        <li  class="active"><a href="/index"><span class="icon-home"></span> Home</a></li>
     </ul>
     <!-- Breadcrumbs -->
 
@@ -81,17 +110,6 @@
 </div>
 <!-- /Main content -->
 
-<!-- Main footer -->
-<!--<footer class="container">
-    <nav>
-        <ul>
-            <li>&copy; Copyright 2019. All rights reserved.</li>
-        </ul>
-    </nav>
-    <p>&copy; Copyright &copy; 2019. Likema. All rights reserved.</p>
-</footer>-->
-<!-- /Main footer -->
-
 <!-- Scripts -->
 <script src="/js/navbar.js"></script>
 <script src="/js/plugins/waypoints.min.js"></script>
@@ -99,7 +117,9 @@
 <script src="/js/bootstrap/bootstrap-dropdown.js"></script>
 <script src="/js/bootstrap/bootstrap-collapse.js"></script>
 
-<div id="main" style="width: 1200px; height: 600px; "></div>
+
+<div id="main" style="width: 1200px; height: 500px; "></div>
+
 <script type="text/javascript">
     var name = $("#name").val();
     var date = $("#date").val();
@@ -121,6 +141,7 @@
                 if (result) {
                     data0 = JSON.parse(JSON.stringify(result));
                 }
+                //console.log("data"+data0);
             },
             error: function (errorMsg) {
                 //请求失败时执行该函数
@@ -175,8 +196,23 @@
 
     option = {
         title: {    //标题
-            text: 'Securities',
-            left: 0
+            text: 'Security: '+name,
+            left: 1,
+            textStyle:{
+                fontFamily: 'Arial',
+                fontSize: 20,
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+                color:'#d43f3f',
+                // fontWeight: bold
+                fontWeight:'bold'
+            },
+            padding: [
+                5,  // 上
+                10, // 右
+                5,  // 下
+                80, // 左
+            ]
         },
         tooltip: {  //提示框
             trigger: 'axis',    //触发类型：坐标轴触发
@@ -185,7 +221,7 @@
             }
         },
         legend: {   //图例控件，点击图例控制哪些系列不现实
-            data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
+            data: ['Candlesticks', 'MA5', 'MA10', 'MA20', 'MA30']
         },
         grid: {     //直角坐标系
             show: true,
@@ -228,10 +264,17 @@
         ],
         series: [   //图表类型
             {
-                name: '日K',
+                name: 'Candlesticks',
                 type: 'candlestick',    //K线图
                 data: data0.values,     //y轴对应的数据
-
+                itemStyle: {
+                    normal: {
+                        color: 'red',
+                        color0: 'green',
+                        borderColor: 'red',
+                        borderColor0: 'green'
+                    }
+                },
                 ////////////////////////图标标注/////////////////////////////
 
                 markPoint: {    //图表标注
@@ -365,18 +408,17 @@
     // 使用刚指定的配置项和数据显示图表
     myChart.setOption(option);
 </script>
-<div id="TimeSharingChart" style="width: 1200px; height: 600px;display: none"></div>
+<div id="TimeSharingChart" style="width: 1200px; height: 500px;display: none"></div>
 <script type="text/javascript">
     // 初始化一个echarts的对象
     var chart =  echarts.init(document.getElementById('TimeSharingChart'));
-
     //分时图数据 时间/min 价格/close/min
     var dataTimely = getTimelyData();
-
+    var stockName = dataTimely.stockName;
     function getTimelyData(){
         $.ajax({
             type: "GET",
-            url: "/marketData/getMarketEchart?date=" + date +"&stockName=" + name,    //请求发送到TestServlet处
+            url: "/marketData/getMarketEchart?date="+date+"&stockName="+name,    //请求发送到TestServlet处
             data: {},
             async: false,
             dataType: "json",        //返回数据形式为json
@@ -409,41 +451,75 @@
             // x轴显示的数据
             data: dataTimely.categoryData
         },
+        /* legend:{
+             data:[stockName],
+
+         },*/
+        title: {    //标题
+            text: stockName,
+            text: "Security: " + name + "    Date: " + date,
+            left: 1,
+            textStyle:{
+                fontFamily: 'Arial',
+                fontSize: 20,
+                fontStyle: 'normal',
+                // fontWeight: 'normal',
+                color:'#d43f3f',
+                fontWeight:'bold',
+            },
+            padding: [
+                5,  // 上
+                10, // 右
+                5,  // 下
+                80, // 左
+            ]
+        },
+        tooltip: {  //提示框
+            trigger: 'axis',    //触发类型：坐标轴触发
+            axisPointer: {  //坐标轴指示器配置项
+                type: 'cross'   //指示器类型，十字准星
+            }
+        },
 
         // y轴配置
         yAxis: {
-            name: 'Price',
+            name: 'Close',
             type: 'value',
             min: function(value) {return value.min ;} ,
             max: function(value) {return value.max ;}
         },
         series: [{
-            data: dataTimely.value,
-            // line类型是折线图，bar类型是柱状图
-            type: 'line'
+            name: stockName,
+            type: 'line',
+            stack: 'Price',
+            data: dataTimely.value
         }]
     };
     chart.setOption(option);
 </script>
-<div class="btn-group" data-toggle="buttons">
-    <label id="OHLC" class="btn btn-primary">
-        <input type="radio" name="options" id="option1"> OHLC
-    </label>
-    <label id="TimeSharing" class="btn btn-primary">
-        <input type="radio" name="options" id="option2">TimeSharing
-    </label>
+<div class="btn-group switch" data-toggle="buttons">
+    <button id="OHLC" class="btn btn-primary" style="background-color:#b94a48;color:#fff ">
+        OHLC
+    </button>
+    <button id="TimeSharing" class="btn btn-primary" style="background-color:#fff;color:#b94a48 ">
+        TimeSharing
+    </button>
 </div>
-<script>
-    $("#OHLC").click(function(){
-        $("#TimeSharingChart").css("display","none");
-        $("#main").css("display","block")
-    })
-</script>
 <script>
     $("#TimeSharing").click(function(){
         $("#TimeSharingChart").css("display","block");
-        $("#main").css("display","none")
-    })
+        $("#main").css("display","none");
+        $("#TimeSharing").css({"background-color":"#b94a48","color":"white"});
+        $("#OHLC").css({"background-color":"white","color":"#b94a48"});
+    });
+</script>
+<script>
+    $("#OHLC").click(function(){
+        $("#TimeSharingChart").css("display","none");
+        $("#main").css("display","block");
+        $("#OHLC").css({"background-color":"#b94a48","color":"white"});
+        $("#TimeSharing").css({"background-color":"white","color":"#b94a48"});
+    });
 </script>
 <div style="display:none">
     <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
