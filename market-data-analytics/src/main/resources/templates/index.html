@@ -78,7 +78,7 @@
                 <ul class="nav" role="navigation">
                     <li class="active"><a href="#" title="Homepage dashboard"><span class="icon-home"></span>
                         Home</a></li>
-                    <li><a href="#table" title="All securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="#Security" title="All securities"><span class="icon-tasks"></span>All Securities</a></li>
                     <li><a href="/portfolios" title="Portfolios demo"><span class="icon-table"></span>Portfolios Demo</a>
                     </li>
                     <li class="divider-vertical"></li>
@@ -130,7 +130,7 @@
 
                 <!-- Grid row -->
                 <div class="row">
-
+                    <div id="Security"></div>
                     <!-- Page grid cell (12 blocks - full) -->
                     <article class="span12">
                         <h2>All of the securities</h2>
@@ -203,6 +203,10 @@
 
 
 <script>
+    var stockNames = "-";
+    var seperator = "-";
+    var count = 0;
+    var firstDraw= true;
     $(document).ready(function () {
         /* Table #example */
         var table = $('.datatable').DataTable({
@@ -211,6 +215,7 @@
             "bProcessing" : false,
             ajax : {
                 "url":"/stock/list",
+                // "async": false,
                 "data": { date : function() {
                         var date = $("#date").val();
                         console.log("date:" + date);
@@ -257,7 +262,7 @@
                         var stockName = '"' + data.stockName + '"';
                         var date = '"' + data.date + '"';
                         return "<a title='Go to see the plots of this security'><button class=\"btn btn-info btn-wuxia\" " +
-                            "onclick='showDetail("+stockName+","+date+")'>plots</button></a>"
+                            "onclick='showDetail("+stockName+","+date+")'>Plots</button></a>"
                             +"&nbsp;"
                             + "<a title='Add this security to your own portfolio'><button class=\"btn btn-warning btn-wuxia\" id='"+id+"' " +
                             "onclick='addIntoPortfolio("+stockName+","+stockName+")'>"
@@ -269,8 +274,6 @@
                 "sLengthMenu": "_MENU_ records per page"
             },
             "fnFormatNumber": function ( iIn ) {
-                console.log("fnFormatNumber-------------------------------");
-                console.log("iIn="+iIn);
                 if ( iIn < 1000 ) {
                     return iIn;
                 } else {
@@ -287,16 +290,52 @@
                     }
                 }
                 return out;
+            },
+            "drawCallback": function( settings ) { // when datatable finish draw, it will call this function
+                // var api = this.api();
+                //
+                // // Output the data for the visible rows to the browser's console
+                // console.log( api.rows( {page:'current'} ).data() );
+                if(firstDraw){
+                    console.log("First Draw");
+                    firstDraw = false;
+                }else{
+                    console.log("----------------------------draw function cookie-----------------------------------")
+                    var securityStr = getCookie(" stockNames");
+                    console.log("securityStr:" + securityStr);
+                    var securities = securityStr.split("-");
+                    var length = securities.length - 2;
+                    for (var i = 1; i <= length; i++) {
+                        var id = securities[i];
+                        console.log("id:" + id);
+                        var bt = document.getElementById(id);
+                        if(bt == undefined)
+                            continue;
+                        bt.style.color = "white";
+                        var $bt = $(bt);
+                        console.log("bt.id=" + $bt.attr("id"));
+                        console.log("log confirm");
+                        classChangeFromPlusToMinus($bt);
+                        count = length;
+                        $("#securityCount").html(length);
+                    }
+                }
             }
         })
 
         $("#date").live("input propertychange",function(){
-            console.log("click");
+            // console.log("click");
             table.ajax.reload();
             console.log(table.ajax);
         })
 
+        table.on( 'draw', function () {
+            console.log( 'Redraw occurred at: '+new Date().getTime() );
+        } );
+
     })
+
+
 
 
 
@@ -309,6 +348,8 @@
         placement: 'bottom',
         text: 'Add this security to your own portfolio'
     });
+
+
 
     function getDateDateFromDateTime(dateTime){
         var date = dateTime.substr(0,10);
@@ -328,15 +369,15 @@
         var dateData = getDateDateFromDateTime(dateTime);
         var curpath = window.location.href;
         var basepath = curpath.split("/")[0];
-        console.log("basepath"+basepath);
+        // console.log("basepath"+basepath);
         var url = basepath+"/securities?name="+stockName+"&date="+dateData;
         window.open(url);
     }
 
     function setCookie(name, value, expires){
-        console.log("--------------------addIntoCookies--------------------");
+        // console.log("--------------------addIntoCookies--------------------");
         var date = new Date();
-        date.setDate(date.getDate() + expires);
+        date.setTime(date.getTime() + expires);
         document.cookie = name + "=" + value +";expires=" + date;
     }
 
@@ -344,7 +385,7 @@
         var arrStr = document.cookie.split(";");
         for(var i = 0; i< arrStr.length; i++){
             var arr = arrStr[i].split("=");
-            console.log(arr[0]);
+            // console.log(arr[0]);
             if(arr[0] == key){
                 return arr[1];
             }
@@ -352,9 +393,6 @@
         return "";
     }
 
-    var stockNames = "-";
-    var seperator = "-";
-    var count = 0
     function changeSecurityNum(cookie,key){
         var arrStr = cookie.split(";");
         for(var i=0; i<arrStr.length; i++){
@@ -368,6 +406,24 @@
         return 0;
     }
 
+    function classChangeFromPlusToMinus($bt){
+        var stockName = $bt.attr("id");
+        var id = stockName;
+        $bt.removeClass("btn-warning");
+        $bt.addClass("btn-danger");
+        $bt.children("i").addClass("fa-minus").removeClass("fa-plus");
+        $bt.attr("onclick","deleteFromPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
+    }
+
+    function classChangeFromMinusToPlus($bt){
+        var stockName = $bt.attr("id");
+        var id = stockName;
+        $bt.removeClass("btn-danger");
+        $bt.addClass("btn-warning");
+        $bt.children("i").addClass("fa-plus").removeClass("fa-minus");
+        $bt.attr("onclick","addIntoPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
+    }
+
     function addIntoPortfolio(stockName,id){
         stockNames += stockName + seperator;
         setCookie("stockNames",stockNames,60);
@@ -376,10 +432,7 @@
         var bt = document.getElementById(id);
         var $bt = $(bt);
         // console.log("bt:"+$bt.attr('id'));
-        $bt.removeClass("btn-warning");
-        $bt.addClass("btn-danger");
-        $bt.children("i").addClass("fa-minus").removeClass("fa-plus");
-        $bt.attr("onclick","deleteFromPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
+        classChangeFromPlusToMinus($bt);
 
         changeSecurityNum(document.cookie," stockNames");
     }
@@ -389,11 +442,8 @@
         var bt = document.getElementById(id);
         var $bt = $(bt);
         // console.log("bt:"+$bt.attr('id'));
-        $bt.removeClass("btn-danger");
-        $bt.addClass("btn-warning");
-        $bt.children("i").addClass("fa-plus").removeClass("fa-minus");
-        $bt.attr("onclick","addIntoPortfolio("+'"'+stockName+'"'+","+'"'+id+'"'+")");
         console.log("cookie:"+document.cookie);
+        classChangeFromMinusToPlus($bt);
 
         changeSecurityNum(document.cookie," stockNames");
     }
@@ -401,22 +451,22 @@
     function deleteFromCookies(stockName){
         console.log("--------------------deleteFromCookies--------------------");
         var curCookie = getCookie(" stockNames");
-        console.log("curCookie:"+curCookie);
+        // console.log("curCookie:"+curCookie);
         var target = seperator+ stockName +seperator;
         var start = curCookie.indexOf(target);
-        console.log("search:"+target);
-        console.log("start:"+start);
+        // console.log("search:"+target);
+        // console.log("start:"+start);
         var newCookie = curCookie.substr(0,start)+curCookie.substr(start+stockName.length+1);
         setCookie("stockNames",newCookie,60);
         stockNames = newCookie;
-        console.log("newCookie:"+newCookie);
+        // console.log("newCookie:"+newCookie);
     }
 
     function clickMyPortfolios(){
         if(count == 0){
             alert("You have't select any securities！！！");
         }else {
-            console.log(getCookie("stockNames"));
+            // console.log(getCookie("stockNames"));
             var curpath = window.location.href;
             var basepath = curpath.split("/")[0];
             var url = basepath+"/myPortfolio";
@@ -505,8 +555,27 @@
         }
     });
 
-
 </script>
+<!--<script>-->
+    <!--window.onload = function() {-->
+        <!--console.log("&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;cookie-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;")-->
+        <!--var securityStr = getCookie(" stockNames");-->
+        <!--var securities = securityStr.split("-");-->
+        <!--var length = securities.length - 2;-->
+        <!--for (var i = 1; i <= length; i++) {-->
+            <!--var id = securities[i];-->
+            <!--console.log("id:" + id);-->
+            <!--var bt = document.getElementById(id);-->
+            <!--bt.style.color = "white";-->
+            <!--var $bt = $(bt);-->
+            <!--console.log("bt.id=" + $bt.attr("id"));-->
+            <!--classChangeFromPlusToMinus($bt);-->
+            <!--count = length;-->
+            <!--$("#securityCount").html(length);-->
+        <!--}-->
+    <!--}-->
+
+<!--</script>-->
 
 </body>
 </html>

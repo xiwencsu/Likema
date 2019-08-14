@@ -24,16 +24,16 @@ public final class Portfolios {
         portfolioArrayList.add(ericOnePortfolio);
 
         // clairPortfolio
-        Portfolio clairPortfolio = new Portfolio();
-        clairPortfolio.setUser("Clair");
-        clairPortfolio.setName("ClairPortfolio");
-        clairPortfolio.setSummary("ClairPortfolio includes abx and acas. Have a good performance recent!");
-        ArrayList<String> clairStockNames = new ArrayList<>();
+        Portfolio clairePortfolio = new Portfolio();
+        clairePortfolio.setUser("Claire");
+        clairePortfolio.setName("ClairePortfolio");
+        clairePortfolio.setSummary("ClairePortfolio includes abx and acas. Have a good performance recent!");
+        ArrayList<String> claireStockNames = new ArrayList<>();
 //        clairStockNames.add("abt");
-        clairStockNames.add("abx");
-        clairStockNames.add("acas");
-        clairPortfolio.setStockNames(clairStockNames);
-        portfolioArrayList.add(clairPortfolio);
+        claireStockNames.add("abx");
+        claireStockNames.add("acas");
+        clairePortfolio.setStockNames(claireStockNames);
+        portfolioArrayList.add(clairePortfolio);
 
         // MoniPortfolio
         Portfolio moniPortfolio = new Portfolio();
@@ -48,18 +48,18 @@ public final class Portfolios {
         portfolioArrayList.add(moniPortfolio);
 
 
-        // RawPortfolio
-        Portfolio rawPortfolio = new Portfolio();
-        rawPortfolio.setUser("Raw");
-        rawPortfolio.setName("RawPortfolio");
-        rawPortfolio.setSummary("RawPortfolio includes adi, adm , adp and ads. Have a good performance recent!");
-        ArrayList<String> rawStockNames = new ArrayList<>();
-        rawStockNames.add("adi");
-        rawStockNames.add("adm");
-        rawStockNames.add("adp");
-        rawStockNames.add("ads");
-        rawPortfolio.setStockNames(rawStockNames);
-        portfolioArrayList.add(rawPortfolio);
+        // KayPortfolio
+        Portfolio kayPortfolio = new Portfolio();
+        kayPortfolio.setUser("Kay");
+        kayPortfolio.setName("KayPortfolio");
+        kayPortfolio.setSummary("KayPortfolio includes adi, adm , adp and ads. Have a good performance recent!");
+        ArrayList<String> kayStockNames = new ArrayList<>();
+        kayStockNames.add("adi");
+        kayStockNames.add("adm");
+        kayStockNames.add("adp");
+        kayStockNames.add("ads");
+        kayPortfolio.setStockNames(kayStockNames);
+        portfolioArrayList.add(kayPortfolio);
         return portfolioArrayList;
     }
 

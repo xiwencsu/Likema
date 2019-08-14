@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Likema</title>
+    <title>Likema-MyPortfolios</title>
     <meta name="description" content=""/>
     <meta name="author" content="Walking Pixels | www.walkingpixels.com"/>
     <meta name="robots" content="index, follow"/>
@@ -64,7 +64,7 @@
                 <ul class="nav" role="navigation">
                     <li><a href="/index" title="Homepage"><span class="icon-home"></span>
                         Home</a></li>
-                    <li><a href="/index#table.html" title="All Securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="/index#table" title="All Securities"><span class="icon-tasks"></span>All Securities</a></li>
                     <li><a href="/portfolios" title="Portfolio Demo"><span class="icon-table"></span>Portfolio Demo</a>
                     </li>
                     <li class="divider-vertical"></li>
@@ -122,7 +122,7 @@
                 }
             ],
             title : {
-                text : 'portfolios',//标题
+                text : 'My Portfolio',//标题
                 textStyle:{
                     fontFamily: 'Arial',
                     fontSize: 25,
@@ -167,15 +167,16 @@
                     },
                     saveAsImage : {
                         show : true,
-                        name : '折线图'//保存的图片名次
+                        name : 'MyPortfolio'//保存的图片名次
                     }
                 }
             },
+
             calculable : true,
             xAxis : [ {
                 type : 'category',
                 boundaryGap : false,
-                name : 'time',
+                name : '',
                 data : [ '' ],
                 axisLine: {onZero: false},
                 splitLine: {show: false},   //是否显示坐标轴轴线
