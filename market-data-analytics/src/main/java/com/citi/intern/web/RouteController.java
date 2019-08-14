@@ -1,6 +1,7 @@
 package com.citi.intern.web;
 
-import org.hibernate.validator.constraints.Range;
+import com.citi.intern.config.Portfolios;
+import com.citi.intern.model.Portfolio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,8 +33,8 @@ public class RouteController {
         return "securities";
     }
 
-    @RequestMapping("/portfolios")
-    public String portfolios(HttpServletRequest request){
+    @RequestMapping("/myPortfolio")
+    public String myPortfolio(HttpServletRequest request){
         logger.info("portfolios request start\n" + request.toString() + "\n portfolios request end");
         Cookie[] cookies =  request.getCookies();
         if(cookies != null){
@@ -44,6 +44,15 @@ public class RouteController {
             }
             logger.info("cookie info end");
         }
+        return "myPortfolio";
+    }
+
+    @RequestMapping("/portfolios")
+    public String portfolios(HttpServletRequest request, ModelMap modelMap){
+        logger.info("portfolios request start\n" + request.toString() + "\n portfolios request end");
+        List<Portfolio> portfolios = Portfolios.portfolios;
+        logger.info("portfolios:", portfolios);
+        modelMap.addAttribute("portfolios", portfolios);
         return "portfolios";
     }
 
