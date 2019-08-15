@@ -15,10 +15,10 @@ public final class Portfolios {
         Portfolio ericOnePortfolio = new Portfolio();
         ericOnePortfolio.setUser("Eric1");
         ericOnePortfolio.setName("Eric1Portfolio");
-        ericOnePortfolio.setSummary("!!!The Best Portfolio!!!Eric1Portfolio includes a and aa. Have a good performance recent!");
+        ericOnePortfolio.setSummary("!!!The Best Portfolio!!!Eric1Portfolio includes ADM and ABX. Have a good performance recent!");
         ArrayList<String> ericOneStockNames = new ArrayList<>();
-        ericOneStockNames.add("a");
-        ericOneStockNames.add("aa");
+        ericOneStockNames.add("ADM");
+        ericOneStockNames.add("ABX");
 //        ericOneStockNames.add("aap");
         ericOnePortfolio.setStockNames(ericOneStockNames);
         portfolioArrayList.add(ericOnePortfolio);
@@ -27,11 +27,11 @@ public final class Portfolios {
         Portfolio clairePortfolio = new Portfolio();
         clairePortfolio.setUser("Claire");
         clairePortfolio.setName("ClairePortfolio");
-        clairePortfolio.setSummary("ClairePortfolio includes abx and acas. Have a good performance recent!");
+        clairePortfolio.setSummary("ClairePortfolio includes ABX and ACAS. Have a good performance recent!");
         ArrayList<String> claireStockNames = new ArrayList<>();
 //        clairStockNames.add("abt");
-        claireStockNames.add("abx");
-        claireStockNames.add("acas");
+        claireStockNames.add("ABX");
+        claireStockNames.add("ACAS");
         clairePortfolio.setStockNames(claireStockNames);
         portfolioArrayList.add(clairePortfolio);
 
@@ -39,11 +39,11 @@ public final class Portfolios {
         Portfolio moniPortfolio = new Portfolio();
         moniPortfolio.setUser("Moni");
         moniPortfolio.setName("MoniPortfolio");
-        moniPortfolio.setSummary("MoniPortfolio includes adm, acn and adbe. Have a good performance recent!");
+        moniPortfolio.setSummary("MoniPortfolio includes ADM, ACN and ADBE. Have a good performance recent!");
         ArrayList<String> moniStockNames = new ArrayList<>();
-        moniStockNames.add("adm");
-        moniStockNames.add("acn");
-        moniStockNames.add("adbe");
+        moniStockNames.add("ADM");
+        moniStockNames.add("ACN");
+        moniStockNames.add("ADBE");
         moniPortfolio.setStockNames(moniStockNames);
         portfolioArrayList.add(moniPortfolio);
 
@@ -52,12 +52,12 @@ public final class Portfolios {
         Portfolio kayPortfolio = new Portfolio();
         kayPortfolio.setUser("Kay");
         kayPortfolio.setName("KayPortfolio");
-        kayPortfolio.setSummary("KayPortfolio includes adi, adm , adp and ads. Have a good performance recent!");
+        kayPortfolio.setSummary("KayPortfolio includes ADI, ADM , ADP and ADS. Have a good performance recent!");
         ArrayList<String> kayStockNames = new ArrayList<>();
-        kayStockNames.add("adi");
-        kayStockNames.add("adm");
-        kayStockNames.add("adp");
-        kayStockNames.add("ads");
+        kayStockNames.add("ADI");
+        kayStockNames.add("ADM");
+        kayStockNames.add("ADP");
+        kayStockNames.add("ADS");
         kayPortfolio.setStockNames(kayStockNames);
         portfolioArrayList.add(kayPortfolio);
         return portfolioArrayList;
