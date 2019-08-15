@@ -14,12 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * give all of securities data in home page
+ * @Author Eric1
+ */
 @RestController
 @RequestMapping("/stock")
 public class SecuritiesDataController {
     private static final Logger logger = LoggerFactory.getLogger(SecuritiesDataController.class);
     @Autowired
     SecuritiesDataService stockDataService;
+
+    /**
+     * frontend uses ajax to get data in DataTable format
+     * @param date
+     */
     @RequestMapping("/list")
     DataTableWrapper getStockData(HttpServletRequest request, @RequestParam String date){
         logger.info(request.toString());

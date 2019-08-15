@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * give all of portfolios in portfolios page
+ * @Author Eric1
+ */
+
 @RestController
 @RequestMapping("/portfolios")
 public class PortfoliosController {
@@ -24,10 +29,17 @@ public class PortfoliosController {
     @Autowired
     DailySettlementDataService dailySettlementDataService;
 
+    /**
+     * frontend uses ajax to get portfolios data in Echart format by portfolioName
+     * @param portfolioName
+     */
     @GetMapping("/portfoliosEchartData")
     public List<Object> getEricOnePortfolio(HttpServletRequest request, @RequestParam String portfolioName) {
+
         logger.info(request.toString());
         logger.info(portfolioName);
+
+        // use portfolio name to get stockNames in portfolio
         Portfolio portfolio = new Portfolio();
         for(Portfolio pf: Portfolios.portfolios){
             if(pf.getName().equals(portfolioName)){
@@ -35,8 +47,11 @@ public class PortfoliosController {
             }
         }
         logger.info(portfolio.toString());
+
+        //get stocks data by names
         List<Object> stocks = dailySettlementDataService.queryDailySettlementDataByStocks(portfolio.getStockNames());
         logger.info(stocks.toString());
+
         return stocks;
     }
 }

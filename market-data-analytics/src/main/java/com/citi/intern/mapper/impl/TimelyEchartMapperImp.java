@@ -14,19 +14,17 @@ public class TimelyEchartMapperImp implements TimelyEchartMapper {
     public Echart convert(List<MarketData> MaketDataList) {
         List<String> categoryData = new ArrayList<>();
         List<Double> value = new ArrayList<>();
+        List<Double> TradeVolume = new ArrayList<>();
         for (int i = 0; i < MaketDataList.size(); i++) {
             MarketData MarketData = MaketDataList.get(i);
             categoryData.add(MarketData.getTime());
             value.add(MarketData.getClosePrice());
-//            priceValues.add(MarketData.getOpenPrice());
-//            priceValues.add(MarketData.getClosePrice());
-//            priceValues.add(MarketData.getLowPrice());
-//            priceValues.add(MarketData.getHighPrice());
-//            value.add(priceValues);
+            TradeVolume.add(MarketData.getTradeVolume());
         }
         Echart echart = new Echart();
         echart.setCategoryData(categoryData);
         echart.setValue(value);
+        echart.setTradeVolume(TradeVolume);
         return echart;
     }
 }

@@ -55,26 +55,4 @@ public class DailySettlementDataController {
         logger.info(echart.toString());
         return echart;
     }
-    @GetMapping("/getDstEcharts")
-    public List<Object> getDstEcharts(HttpServletRequest request, @RequestParam String stockNames) {
-        logger.info(request.toString());
-        logger.info("stockNames :" + stockNames);
-        String[] stockNamesArray = stockNames.split("-");
-        if(stockNames == null || stockNames.length() == 0){
-            logger.warn("stockNames is null or '' there is no security");
-            return null;
-        }
-        if(stockNamesArray.length == 1){
-            logger.warn("stockNames equal '-' there is no security");
-            return null;
-        }
-        List<String> stockNamesArrayResult = new ArrayList<>(); // Raw Collection
-        for(int i=1; i<stockNamesArray.length; i++){
-            stockNamesArrayResult.add(stockNamesArray[i]);
-        }
-        logger.info("stockNamesArrayResult :" + stockNamesArrayResult);
-        List<Object> stocks = dailySettlementDataService.queryDailySettlementDataByStocks(stockNamesArrayResult);
-        logger.info(stocks.toString());
-        return stocks;
-    }
 }

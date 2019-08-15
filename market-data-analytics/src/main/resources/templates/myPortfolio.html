@@ -64,11 +64,11 @@
                 <ul class="nav" role="navigation">
                     <li><a href="/index" title="Homepage"><span class="icon-home"></span>
                         Home</a></li>
-                    <li><a href="/index#table" title="All Securities"><span class="icon-tasks"></span>All Securities</a></li>
+                    <li><a href="/index#Security" title="All Securities"><span class="icon-tasks"></span>All Securities</a></li>
                     <li><a href="/portfolios" title="Portfolio Demo"><span class="icon-table"></span>Portfolio Demo</a>
                     </li>
                     <li class="divider-vertical"></li>
-                    <li class="active"><a href="/myPortfolio" title="My Portfolio" class="btn-wuxia-navbar">
+                    <li class="active"><a onclick="/myPortfolio" title="My Portfolio" class="btn-wuxia-navbar">
                         <div class="btn btn-wuxia"><span class="icon-key"></span>My Portfolio</div>
                     </a></li>
                 </ul>
@@ -205,7 +205,7 @@
             $.ajax({
                 type: "GET",
                 async: false,
-                url : '/dst/getDstEcharts?stockNames=' + getCookie("stockNames"),
+                url : '/myPortfolio/getMyPortfolioEchart?stockNames=' + getCookie("stockNames"),
                 success : function(result) {
                     console.log(result);
                     lineOption.xAxis[0].data = result[0];

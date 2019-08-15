@@ -8,10 +8,16 @@ public class Echart {
     private List<String> categoryData;
     private List<List<Double>> values;
     private List<Double> value;
+    private List<Double>  TradeVolume;
+    private String StockName;
 
     public List<String> getCategoryData() {
         return categoryData;
     }
+
+    public List<Double> getTradeVolume() { return TradeVolume; }
+
+    public void setTradeVolume(List<Double> tradeVolume) { TradeVolume = tradeVolume; }
 
     public void setCategoryData(List<String> categoryData) {
         this.categoryData = categoryData;
@@ -20,11 +26,14 @@ public class Echart {
         return values;
     }
     public List<Double> getValue() { return value; }
+    public String getStockName() { return StockName; }
+
 
     public void setValues(List<List<Double>> values) {
         this.values = values;
     }
     public void setValue(List<Double> value){this.value = value;}
+    public void setStockName(String stockName) { StockName = stockName; }
 
     @Override
     public String toString() {

@@ -151,27 +151,7 @@
         return data0;
     }
 
-    //切割数组，把数组中的日期和数据分离，返回数组中的日期和数据
-    function splitData(rawData) {
-        var categoryData = [];
-        var values = [];
 
-        for (var i = 0; i < rawData.length; i++) {
-            //splice 返回每组数组中被删除的第一项，即返回数组中被删除的日期
-            //alert(rawData[i].splice(0, 1)[0]);
-            //categoryData  日期  把返回的日期放到categoryData[]数组中
-            categoryData.push(rawData[i].splice(0, 1)[0]);
-            //alert(categoryData);
-
-            //数据数组，即数组中除日期外的数据
-            // alert(rawData[i]);
-            values.push(rawData[i])
-        }
-        return {
-            categoryData: categoryData, //数组中的日期 x轴对应的日期
-            values: values              //数组中的数据 y轴对应的数据
-        };
-    }
 
     //计算MA平均线，N日移动平均线=N日收盘价之和/N  dayCount要计算的天数(5,10,20,30)
     function calculateMA(dayCount) {
@@ -220,45 +200,89 @@
                 type: 'cross'   //指示器类型，十字准星
             }
         },
+        axisPointer: {
+            link: {xAxisIndex: 'all'},
+            label: {
+                backgroundColor: '#777'
+            }
+        },
         legend: {   //图例控件，点击图例控制哪些系列不现实
             data: ['Candlesticks', 'MA5', 'MA10', 'MA20', 'MA30']
         },
-        grid: {     //直角坐标系
-            show: true,
-            left: '10%',    //grid组件离容器左侧的距离
-            right: '10%',
-            bottom: '15%',
-            //backgroundColor:'#ccc'
-        },
-        xAxis: {
-            type: 'category',   //坐标轴类型，类目轴
-            data: data0.categoryData,
-            //scale: true,  //只在数字轴中有效
-            boundaryGap: false,    //刻度作为分割线，标签和数据点会在两个刻度上
-            axisLine: {onZero: false},
-            splitLine: {show: false},   //是否显示坐标轴轴线
-            //splitNumber: 20,    //坐标轴的分割段数，预估值，在类目轴中无效
-            min: 'dataMin', //特殊值，数轴上的最小值作为最小刻度
-            max: 'dataMax'  //特殊值，数轴上的最大值作为最大刻度
-        },
-        yAxis: {
-            scale: true,    //坐标刻度不强制包含零刻度
-            splitArea: {
-                show: true  //显示分割区域
+        grid: [
+            {
+                left: '10%',
+                right: '8%',
+                height: '50%'
+            },
+            {
+                left: '10%',
+                right: '8%',
+                top: '63%',
+                height: '16%'
             }
-        },
-        dataZoom: [     //用于区域缩放
+        ],
+        xAxis: [
+            {
+                type: 'category',   //坐标轴类型，类目轴
+                data: data0.categoryData,
+                //scale: true,  //只在数字轴中有效
+                boundaryGap: false,    //刻度作为分割线，标签和数据点会在两个刻度上
+                axisLine: {onZero: false},
+                splitLine: {show: false},   //是否显示坐标轴轴线
+                //splitNumber: 20,    //坐标轴的分割段数，预估值，在类目轴中无效
+                min: 'dataMin', //特殊值，数轴上的最小值作为最小刻度
+                max: 'dataMax', //特殊值，数轴上的最大值作为最大刻度
+                axisPointer:{z:100},
+            },
+
+            {
+                type: 'category',
+                gridIndex: 1,
+                data: data0.categoryData,
+                scale: true,
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                axisTick: {show: false},
+                splitLine: {show: false},
+                axisLabel: {show: false},
+                splitNumber: 20,
+                min: 'dataMin',
+                max: 'dataMax'
+           }
+        ],
+        yAxis: [
+            {
+                scale: true,    //坐标刻度不强制包含零刻度
+                splitArea: {
+                    show: true  //显示分割区域
+                }
+            },
+            {
+                scale: true,
+                gridIndex: 1,
+                splitNumber: 2,
+                axisLabel: {show: false},
+                axisLine: {show: false},
+                axisTick: {show: false},
+                splitLine: {show: false}
+            }
+        ],
+
+        dataZoom: [                      //用于区域缩放
             {
                 filterMode: 'filter',    //当前数据窗口外的数据被过滤掉来达到数据窗口缩放的效果  默认值filter
-                type: 'inside', //内置型数据区域缩放组件
-                start: 50,      //数据窗口范围的起始百分比
-                end: 100        //数据窗口范围的结束百分比
+                type: 'inside',          //内置型数据区域缩放组件
+                xAxisIndex: [0, 1],
+                start: 0,               //数据窗口范围的起始百分比
+                end: 100                 //数据窗口范围的结束百分比
             },
             {
                 show: true,
-                type: 'slider', //滑动条型数据区域缩放组件
-                y: '90%',
-                start: 50,
+                xAxisIndex: [0, 1],
+                type: 'slider',        //滑动条型数据区域缩放组件
+                top: '85%',
+                start: 0,
                 end: 100
             }
         ],
@@ -288,14 +312,6 @@
                         }
                     },
                     data: [     //标注的数据数组
-                        {
-                            name: 'XX标点',
-                            coord: ['2013/5/31', 2300], //指定数据的坐标位置
-                            value: 2300,
-                            itemStyle: {    //图形样式
-                                normal: {color: 'rgb(41,60,85)'}
-                            }
-                        },
                         {
                             name: 'highest value',
                             type: 'max',    //最大值
@@ -400,6 +416,13 @@
                     normal: {opacity: 0.5}
                 }
             },
+            {
+                name: 'Volume',
+                type: 'bar',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                data: data0.tradeVolume
+            }
 
         ]
     };
@@ -437,24 +460,6 @@
     }
     // echarts折线图的配置项
     var option = {
-        dataZoom: [
-            {
-                id: 'dataZoomX',
-                type: 'slider',
-                xAxisIndex: [0],
-                filterMode: 'filter'
-            }
-        ],
-        // x轴配置
-        xAxis: {
-            type: 'category',
-            // x轴显示的数据
-            data: dataTimely.categoryData
-        },
-        /* legend:{
-             data:[stockName],
-
-         },*/
         title: {    //标题
             text: stockName,
             text: "Security: " + name + "    Date: " + date,
@@ -480,20 +485,105 @@
                 type: 'cross'   //指示器类型，十字准星
             }
         },
-
+        axisPointer: {
+            link: {xAxisIndex: 'all'},
+            label: {
+                backgroundColor: '#777'
+            }
+        },
+        dataZoom: [                      //用于区域缩放
+            {
+                filterMode: 'filter',    //当前数据窗口外的数据被过滤掉来达到数据窗口缩放的效果  默认值filter
+                type: 'inside',          //内置型数据区域缩放组件
+                xAxisIndex: [0, 1],
+                start: 0,               //数据窗口范围的起始百分比
+                end: 100                 //数据窗口范围的结束百分比
+            },
+            {
+                show: true,
+                xAxisIndex: [0, 1],
+                type: 'slider',        //滑动条型数据区域缩放组件
+                top: '85%',
+                start: 0,
+                end: 100
+            }
+        ],
+        grid: [
+            {
+                left: '10%',
+                right: '8%',
+                height: '50%'
+            },
+            {
+                left: '10%',
+                right: '8%',
+                top: '63%',
+                height: '16%'
+            }
+        ],
+        // x轴配置
+        xAxis: [
+            {
+                type: 'category',   //坐标轴类型，类目轴
+                data: dataTimely.categoryData,
+                //scale: true,  //只在数字轴中有效
+                boundaryGap: false,    //刻度作为分割线，标签和数据点会在两个刻度上
+                axisLine: {onZero: false},
+                splitLine: {show: false},   //是否显示坐标轴轴线
+                //splitNumber: 20,    //坐标轴的分割段数，预估值，在类目轴中无效
+                min: 'dataMin', //特殊值，数轴上的最小值作为最小刻度
+                max: 'dataMax', //特殊值，数轴上的最大值作为最大刻度
+                axisPointer:{z:100},
+            },
+            {
+                type: 'category',
+                gridIndex: 1,
+                data: dataTimely.categoryData,
+                scale: true,
+                boundaryGap : false,
+                axisLine: {onZero: false},
+                axisTick: {show: false},
+                splitLine: {show: false},
+                axisLabel: {show: false},
+                splitNumber: 20,
+                min: 'dataMin',
+                max: 'dataMax'
+            }
+        ],
         // y轴配置
-        yAxis: {
+        yAxis: [
+            {
             name: 'Close',
             type: 'value',
             min: function(value) {return value.min ;} ,
             max: function(value) {return value.max ;}
-        },
-        series: [{
-            name: stockName,
+            },
+            {
+                scale: true,
+                gridIndex: 1,
+                splitNumber: 2,
+                axisLabel: {show: false},
+                axisLine: {show: false},
+                axisTick: {show: false},
+                splitLine: {show: false}
+            }
+        ],
+        series: [
+            {
+            name: 'Price',
             type: 'line',
             stack: 'Price',
             data: dataTimely.value
-        }]
+        },
+            {
+                name: 'Volume',
+                type: 'bar',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                data: dataTimely.tradeVolume,
+                color:'#61a0a8'
+            }
+        ]
     };
     chart.setOption(option);
 </script>
